@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Main from './components/Main/Main';
 
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <>
      
       <div>
-        hello
+      <Main />
       </div>
     </>
 
