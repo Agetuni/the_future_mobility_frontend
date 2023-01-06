@@ -1,0 +1,60 @@
+.login-section {
+  background-image: url("../../assets/login.jpg");
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  background-color: #b4b2ae3f;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(1px);
+  padding: 80px;
+  border-radius: 10px;
+}
+
+.button1:hover {
+  color: #000000e5;
+  background-color: #555453b4;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.login-title {
+  text-align: center;
+  color: rgba(129, 124, 116, 0.986);
+  margin-bottom: 40px;
+}
+
+.login-form {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 65px;
+  margin-bottom: 5px;
+}
+
+form input {
+  padding: 10px;
+  border: 1px hidden;
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 820px) {
+  .login-section {
+    position: relative;
+    left: -100px;
+    margin-top: -150px;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .login-section {
+    position: relative;
+    left: 2px;
+    top: 150px;
+  }
+}
