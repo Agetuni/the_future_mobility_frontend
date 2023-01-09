@@ -3,7 +3,11 @@ import { NavLink } from 'react-router-dom';
 import '../assets/styles/main.scss';
 
 const Main = () => {
-  
+  useEffect(() => {
+    if (localStorage.getItem('loggedOut')) {
+      localStorage.removeItem('loggedOut');
+    }
+  }, []);
 
   return (
       <>
@@ -11,9 +15,9 @@ const Main = () => {
       <main className="splashscreen-container">
         <section className="splashscreen-content">
                   <h2 className="splashscreen-message">Welcome To Moblity Future</h2>  
-                  <p  className="button splashscreen-button">
+                  <NavLink to="/register" className="button splashscreen-button">
             Register
-          </p>        
+          </NavLink>       
               </section>
              
       </main>
