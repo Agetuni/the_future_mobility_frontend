@@ -13,7 +13,12 @@ const vehicalDetail = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `${BASE_URL}api/v1/vehicals/${params.id}` //add authentication header here
+        `${BASE_URL}api/v1/vehicals/${params.id}`,
+        {
+          headers: {
+            Authorization: `${localStorage.getItem('token')}`,
+          },
+        },
       );
       setVehical(response.data);
     };
