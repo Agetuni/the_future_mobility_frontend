@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Raleway:wght@200;400&display=swap');
+
+.vehical-spec-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+  background-color: #fff;
+  padding: 1rem;
+  font-size: 20px;
+}
+
+.vehical-spec-details li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 1rem;
+}
+
+.vehical-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 30px 0;
+}
+
+.vehical-details .model {
+  font-weight: bold;
+  font-family: inherit;
+  color: #071a1a;
+  text-align: right;
+  background: #fff;
+}
+
+.vehical-image {
+  margin: 5rem 2rem 0;
+
+  img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.reserve-btn,
+.reserved-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+  background-color: #98c110;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+
+.reserved-btn {
+  background-color: red;
+  color: #fff;
+}
+
+// Desktop Version
+@media screen and (min-width: 768px) {
+  .vehical-details-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .vehical-image {
+    margin: 1rem;
+
+    img {
+      width: 500px;
+      height: 500px;
+    }
+  }
+
+  .addvehicalBtn {
+    position: fixed;
+    top: 15px;
+    right: 30px;
+    margin: 0.25rem 0.125rem;
+    border-radius: 0.25rem;
+    padding: 0.375rem 0.75rem;
+    font-weight: 400;
+    font-size: 1rem;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+    background-color: #f9c847;
+  }
+}
