@@ -4,15 +4,12 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 import App from './App';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 import { configureStore, findNonSerializableValue } from '@reduxjs/toolkit';
-
+import  store from './redux/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const store = configureStore({
-  reducer: {
-   
-  },
-});
 root.render(
   <React.StrictMode>
     <Provider store={store}>
