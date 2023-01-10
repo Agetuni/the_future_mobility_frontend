@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Poppins&family=Roboto:wght@400;700&family=Square+Peg&display=swap");
+
+:root {
+  --light-green: #97bf0e;
+  --blue: #48bab5;
+  --dark-green: #617c00;
+  --orange: #f5c702;
+  --black: #111;
+  --main-white: #fff;
+  --main-font: "Roboto";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* navbar */
+.navbar {
+  width: 15vw;
+  height: 100vh;
+  border-right: 0.4px solid rgba(142, 142, 142, 0.2);
+  padding: 1rem 1rem 0 1rem;
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+}
+
+.logo {
+  width: 3rem;
+}
+
+.links-container {
+  margin-top: 5rem;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0 auto;
+}
+
+.navbar ul li {
+  margin: 1rem 0;
+}
+
+.navbar ul li a {
+  display: inline-block;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  color: #000;
+  text-transform: uppercase;
+  padding: 8px;
+  width: 100%;
+}
+
+.link:hover {
+  color: var(--dark-green);
+  background-color: #dddddc;
+}
+
+.active {
+  background-color: var(--light-green);
+  color: var(--main-white) !important;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 1rem;
+}
+
+/* end of navbar */
+
+/* main section */
+#main-sec {
+  position: absolute;
+  margin-left: 15vw;
+  padding: 20px;
+}
+
+/* end of main section */
+
+@media only screen and (min-width: 767px) {
+  .navbar {
+    left: 10px;
+  }
+
+  .links-container {
+    position: relative;
+    left: -30px;
+  }
+}

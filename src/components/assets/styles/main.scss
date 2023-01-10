@@ -1,0 +1,49 @@
+@import 'design';
+
+.splashscreen-container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../images/tesla.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  background-color: whitesmoke;
+  color: $white;
+}
+
+.splashscreen-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  color: $white;
+}
+
+.splashscreen-message {
+  font-size: 3em;
+  text-align: center;
+}
+
+.splashscreen-button {
+  font-size: 1.5em;
+}
+
+@media only screen and (min-width: 900px) {
+  .splashscreen-container {
+    background-size: contain;
+    background-position: center;
+  }
+
+  .splashscreen-content {
+    gap: 1em;
+  }
+
+  .splashscreen-message {
+    font-size: 4em;
+  }
+}
