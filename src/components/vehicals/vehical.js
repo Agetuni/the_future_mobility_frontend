@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { nanoid } from '@reduxjs/toolkit';
@@ -8,13 +9,12 @@ import {
   FaFacebook, FaInstagram, FaTwitter, FaWhatsapp,
 } from 'react-icons/fa';
 import 'swiper/css/bundle';
-import './swiper.css';
+import '../assets/styles/swiper.scss';
 import './vehicalcard.scss';
 import BASE_URL from '../../api';
 
 const VehicalCard = ({ vehical }) => {
   const params = useParams();
-  const { Vehicals } = vehical;
 
   return (
     <>
@@ -28,25 +28,22 @@ const VehicalCard = ({ vehical }) => {
           modules={[Pagination, Navigation]}
           className="mySwiper"
         >
-          {Vehicals.length
-            ? Vehicals.map((el) => (
+          
               <SwiperSlide key={nanoid()}>
-                <Link to={`/categories/${params.id}/Vehicals/${el.id}`} key={nanoid()}>
+                <Link to={`/vehicals/${vehical.id}`} key={nanoid()}>
 
                   <div className="card card-content">
                     <div className="img-div">
-                      { el.picture ? (<img src={`${BASE_URL}${el.picture}`} alt="" className="imgSize" />) : (<img src={el.image} alt="" className="imgSize" />)}
+                      <img src={vehical.image} alt="" className="imgSize" width="200px"/>
                     </div>
                     <ul>
-                      <li className="model">
-                        Vehical Model:
-                        {' '}
-                        {el.model}
+                      <li className="modvehical">
+                        model
                       </li>
                       <li className="content-id">
                         ID:
                         {' '}
-                        {el.id}
+                        {vehical.id}
                       </li>
                     </ul>
                     <div>
@@ -62,37 +59,14 @@ const VehicalCard = ({ vehical }) => {
 
                 </Link>
               </SwiperSlide>
-            ))
-            : null}
+            
+            
         </Swiper>
       </div>
     </>
   );
 };
 
-VehicalCard.defaultProps = {
-  vehical: {
-    catname: '',
-    id: '',
-    Vehicals: [],
-  },
-};
 
-VehicalCard.propTypes = {
-  vehical: PropTypes.shape({
-    catname: PropTypes.string,
-    id: PropTypes.number,
-    Vehicals: PropTypes.arrayOf(
-      PropTypes.shape({
-        brand: PropTypes.string,
-        category_id: PropTypes.number,
-        image: PropTypes.string,
-        model: PropTypes.string,
-        rental_price: PropTypes.number,
-        year: PropTypes.string,
-      }),
-    ),
-  }),
-};
 
 export default VehicalCard;

@@ -10,9 +10,10 @@ const store = configureStore({
         addvehical:newvehical,
         vehical: vehicalSlice,
         delvehical:delvehicalSlice,
-        reservation: reservationSlice,
-        delreservation: delresSlice,
-    }
+        
+    },
+middleware: (getDefaultMiddleware) => getDefaultMiddleware(findNonSerializableValue).concat(logger), // eslint-disable-line
+
 });
 
 export default store;

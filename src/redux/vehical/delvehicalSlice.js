@@ -9,9 +9,8 @@ const initialState = {
 };
 
 export const deletevehical = createAsyncThunk('vehical/deletevehical', (vehical) =>
-    axios.delete(`${BASE_URL}api/v1/vehicals/${vehical.id}`, {
-        vehical,
-    }, {
+  axios.delete(`${BASE_URL}api/v1/vehicles/${vehical.id}`,
+    {
         headers: {
             Authorization: `${localStorage.getItem('token')}`,
         },

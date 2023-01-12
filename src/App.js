@@ -4,7 +4,8 @@ import Main from './components/Main/Main';
 import Register from './components/Register/Register';
 import { BrowserRouter  , Route, Routes} from 'react-router-dom'
 import Vehicals from './components/vehicals/Vehicals';
-import Vehical from './components/vehical/Vehical';
+import VehicalDetails from './components/vehicals/vehicaldetails'
+import VehicalList from './components/vehicals/Vehicals';
 const App = () => (
   <>
     <div>
@@ -13,10 +14,9 @@ const App = () => (
     <Routes>
       
 
-      <Route path="/" element={<Main />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="/vehicals" element={<Vehicals />}/>
-      <Route path="/vehical" element={<Vehical />}/> 
+      
+      <Route path="/vehicals/:id" element={<VehicalDetails />}/>
+      <Route path="/vehical" element={<VehicalList />}/> 
          
      
       
