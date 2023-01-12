@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Reservation = () => {
+const addReservation = () => {
   
 
   return (
@@ -13,4 +13,4 @@ const Reservation = () => {
   );
 };
 
-export default Reservation;
+export default addReservation;
