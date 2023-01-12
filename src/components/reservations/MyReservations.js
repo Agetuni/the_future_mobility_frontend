@@ -50,7 +50,7 @@ const MyReservations = () => {
               <thead>
                 <tr>
                   <th>Reserve ID</th>
-                  <th>Motor ID</th>
+                  <th>vehical ID</th>
                   <th>Start Date</th>
                   <th>End Date</th>
                   <th>Total Price</th>
@@ -67,14 +67,14 @@ const MyReservations = () => {
                         <td>{reservation.id}</td>
                         <td>
                           <Link
-                            to={`/categories/:id/motorcycles/${reservation.motorcycle_id}`}
+                            to={`/categories/:id/vehicals/${reservation.vehical_id}`}
                             style={{
                               color: '#97bf36',
                               border: '1px solid #97bf36',
                               padding: '0.5rem',
                             }}
                           >
-                            {reservation.motorcycle_id}
+                            {reservation.vehical_id}
                           </Link>
                         </td>
                         <td>{reservation.start_date}</td>
@@ -91,7 +91,7 @@ const MyReservations = () => {
                             value={reservation.id}
                             onClick={(e) => {
                               delHandler(e.target.value);
-                              cancelHandler(reservation.motorcycle_id);
+                              cancelHandler(reservation.vehical_id);
                             }}
                           >
                             Cancel

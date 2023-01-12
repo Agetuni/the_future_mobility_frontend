@@ -3,13 +3,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import motorDetail from '../../redux/motorcycles/detail.service';
+import vehicalDetail from '../../redux/vehicals/detail.service';
 import reservation from '../../redux/reservations/reservation.service';
 import totalPrice from '../../helpers/dateHandler';
 import Navbar from '../navigation/Navbar';
 import Toggle from '../navigation/Toggle';
 import './reservation.scss';
-import { updatemotor } from '../../redux/motorcycle/updatemotorSlice';
+
 
 const Reservation = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -21,21 +21,21 @@ const Reservation = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const motorD = useSelector((state) => state.motor.motor);
+  const vehicalD = useSelector((state) => state.vehical.vehical);
 
   const userInfo = JSON.parse(localStorage.getItem('user'));
 
   const d = totalPrice(startDate, endDate);
-  const result = d * motorD.rental_price;
+  const result = d * vehicalD.rental_price;
   useEffect(() => {
     if (params !== 'undefined') {
-      dispatch(motorDetail(params.mid));
+      dispatch(vehicalDetail(params.mid));
     }
   }, [params, dispatch]);
 
   const updateHandler = (value) => {
     const state = { id: value, reserved: true };
-    dispatch(updatemotor(state));
+    dispatch(updatevehical(state));
   };
 
   const submitHandler = (e) => {
@@ -45,7 +45,7 @@ const Reservation = () => {
         setMessage('Please fill all the fields');
       } else {
         const reservebike = {
-          motorcycle_id: params.mid,
+          vehicalcycle_id: params.mid,
           user_id: userInfo,
           start_date: startDate,
           end_date: endDate,
@@ -54,7 +54,7 @@ const Reservation = () => {
         };
         dispatch(reservation(reservebike));
         setReserved(true);
-        setMessage('Motorcycle reserved successfully');
+        setMessage('Vehical reserved successfully');
         navigate('/my_reservations');
       }
     } else {
@@ -71,7 +71,7 @@ const Reservation = () => {
       <div className="reservation-container">
         <h1>Make a Reservation</h1>
         <form className="form-container form-reserve" onSubmit={submitHandler}>
-          {reserved && message === 'Motorcycle reserved successfully' ? (
+          {reserved && message === 'Vehical reserved successfully' ? (
             <div className="alert alert-success" role="alert">
               {message}
             </div>
