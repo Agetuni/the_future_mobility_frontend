@@ -1,38 +1,44 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { nanoid } from '@reduxjs/toolkit';
 import axios from 'axios';
-import './myreservations.scss';
-import { delres } from '../../redux/reservations/delresSlice';
+import delres from '../../redux/reservations/delresSlice'
 import BASE_URL from '../../api';
 
 const MyReservations = () => {
+  const params = useParams();
   const [loading, setLoading] = useState(true);
   const [myreservations, setMyReservations] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `${BASE_URL}api/v1/reservations`,
-        {
-          headers: {
-            Authorization: `${localStorage.getItem('token')}`,
-          },
-        },
+        `${BASE_URL}/api/v1/users/${params.id}/reservations`,
+        
+        
       );
       setLoading(false);
-      setMyReservations(response.data.reservation);
+      console.log(response.data);
+      setMyReservations(response.data);
     };
     fetchData();
+    
   }, []);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const user = JSON.parse(localStorage.getItem('user'));
+  const user = 2;// JSON.parse(localStorage.getItem('user'));
 
+  
   const delHandler = (value) => {
     dispatch(delres({ id: value }));
+  };
+
+  const cancelHandler = (value) => {
+    const state = { id: value, reserved: false };
+    
+    navigate('/vehicals');
   };
 
  
@@ -47,14 +53,14 @@ const MyReservations = () => {
           <h1>My Reservations</h1>
           <div className="reservations">
             <table>
-              <thead>
+            <thead>
                 <tr>
                   <th>Reserve ID</th>
-                  <th>vehical ID</th>
+                  <th>Vehical ID</th>
                   <th>Start Date</th>
                   <th>End Date</th>
-                  <th>Total Price</th>
-                  <th>City</th>
+                 
+                  <th>Address</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -67,7 +73,7 @@ const MyReservations = () => {
                         <td>{reservation.id}</td>
                         <td>
                           <Link
-                            to={`/categories/:id/vehicals/${reservation.vehical_id}`}
+                            to={`/vehicals/${reservation.vehical_id}`}
                             style={{
                               color: '#97bf36',
                               border: '1px solid #97bf36',
@@ -79,18 +85,15 @@ const MyReservations = () => {
                         </td>
                         <td>{reservation.start_date}</td>
                         <td>{reservation.end_date}</td>
+                       
+                        <td>{reservation.address}</td>
                         <td>
-                          $
-                          {reservation.total_price}
-                        </td>
-                        <td>{reservation.city}</td>
-                        <td>
-                          <button
+                        <button
                             type="button"
                             className="cancelBtn"
                             value={reservation.id}
                             onClick={(e) => {
-                              delHandler(e.target.value);
+                              
                               cancelHandler(reservation.vehical_id);
                             }}
                           >

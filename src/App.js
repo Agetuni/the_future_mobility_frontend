@@ -6,6 +6,7 @@ import { BrowserRouter  , Route, Routes} from 'react-router-dom'
 import Vehicals from './components/vehicals/Vehicals';
 import VehicalDetails from './components/vehicals/vehicaldetails'
 import VehicalList from './components/vehicals/Vehicals';
+import MyReservations from './components/reservations/MyReservations'
 const App = () => (
   <>
     <div>
@@ -16,7 +17,8 @@ const App = () => (
 
       
       <Route path="/vehicals/:id" element={<VehicalDetails />}/>
-      <Route path="/vehical" element={<VehicalList />}/> 
+      <Route path="/vehical/:id/reservation" element={<MyReservations />} /> 
+      <Route path="/vehicals" element={<VehicalList />}/>
          
      
       

@@ -5,7 +5,7 @@ import BASE_URL from '../../api';
 const vehicalDetail = createAsyncThunk(
     'vehicals/vehical',
     async (id) => {
-        const response = await axios.get(`${BASE_URL}api/v1/vehicaese/${id}`, {
+        const response = await axios.get(`${BASE_URL}api/v1/vehicles/${id}`, {
           headers: {
             Authorization: `${localStorage.getItem('token')}`,
           },
