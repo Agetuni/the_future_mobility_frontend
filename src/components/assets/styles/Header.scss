@@ -1,0 +1,11 @@
+@import 'design';
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 1em;
+  font-size: 1.5em;
+  font-weight: 700;
+  background-color: $orange;
+  color: $white;
+}

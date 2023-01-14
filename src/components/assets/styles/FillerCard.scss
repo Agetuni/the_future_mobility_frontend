@@ -1,0 +1,17 @@
+@import 'design';
+
+.filler-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  color: $white;
+  font-weight: 600;
+  padding: 1rem;
+  width: 100%;
+}
+
+.filler-card-title {
+  color: currentColor;
+}

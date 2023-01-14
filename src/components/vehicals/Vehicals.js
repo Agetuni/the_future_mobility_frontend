@@ -1,28 +1,30 @@
-import React ,{useState , useEffect} from 'react'
-import axios from 'axios' 
-import BASE_URL from '../../api';
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
+import { nanoid } from "nanoid";
+import VehicalCard from "./vehical";
+import BASE_URL from "../../api";
 
+const VehicalList = () => {
+  const [Vehicals, setVehicals] = useState([]);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.get(`${BASE_URL}api/v1/vehicles/`);
+      setVehicals(response.data);
+    };
+    fetchData();
+  }, []);
 
-const Vehicals = () => {
-    const [vehicals, setVehicals] = useState([])
-    useEffect(() => {
-        axios.get(`${BASE_URL}api/v1/vehicles/`)
-            .then(resp => {
-                setVehicals(resp.data)
-                
-            
-            })
-        .catch(resp => console.log(resp))
-    }, [vehicals.length])
-    
-    const list = vehicals.map(item => {
-        return(<li key={item.id}>{item.name}</li>)
-
-    })
   return (
-    <div>{list} </div>
-  )
-}
+    <div className="wrapper">
+      {Vehicals.length
+        ? Vehicals.map((Vehical) => (
+            <VehicalCard key={nanoid()} vehical={Vehical} />
+          ))
+        : null}
+    </div>
+  );
+};
 
-export default Vehicals
+export default VehicalList;

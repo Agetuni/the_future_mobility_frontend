@@ -1,0 +1,70 @@
+ul li {
+    list-style: none;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 100%;
+    margin: auto;
+  }
+  
+  .img-div {
+    width: 10rem;
+    height: 10rem;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 5px solid rgb(224, 45, 18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+  
+  .model {
+    font-weight: 700;
+    font-family: inherit;
+    color: #022c2c;
+    text-align: center;
+    background: #fff;
+  }
+  
+  .content-id {
+    color: #98c110;
+    text-align: center;
+    padding: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 80%;
+  }
+  
+  .socials li {
+    background: white;
+    border-radius: 100%;
+    padding: 5px;
+    border: 1px solid #489c9c;
+    margin-right: 10px;
+  }
+  
+  // Desktop Version
+  @media screen and (min-width: 768px) {
+    .card.card-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 300px;
+      position: relative;
+    }
+  }
+  
