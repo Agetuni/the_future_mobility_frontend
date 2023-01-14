@@ -4,22 +4,20 @@ import Main from './components/Main/Main';
 import Register from './components/Register/Register';
 import { BrowserRouter  , Route, Routes} from 'react-router-dom'
 import Vehicals from './components/vehicals/Vehicals';
-import VehicalDetails from './components/vehicals/vehicaldetails'
-import VehicalList from './components/vehicals/Vehicals';
-import MyReservations from './components/reservations/MyReservations'
+import Vehical from './components/vehical/Vehical';
+import Signup from './components/user/SignUp';
+import Signin from './components/user/SignIn';
 const App = () => (
   <>
-    <div>
-    
-    </div>
     <Routes>
       
 
-      
-      <Route path="/vehicals/:id" element={<VehicalDetails />}/>
-      <Route path="/vehical/:id/reservation" element={<MyReservations />} /> 
-      <Route path="/vehicals" element={<VehicalList />}/>
-         
+      <Route path="/" element={<Main />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/vehicals" element={<Vehicals />}/>
+      <Route path="/vehical" element={<Vehical />}/> 
+      <Route path="/signup" element={<Signup/>} />
+      <Route path="/signin" element={<Signin/>} />
      
       
     </Routes>
