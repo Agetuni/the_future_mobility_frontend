@@ -1,35 +1,62 @@
 {
   "name": "the-future-mobility",
   "version": "0.1.0",
+  "homepage": ".",
   "private": true,
   "dependencies": {
-    "@reduxjs/toolkit": "^1.9.1",
+    "@reduxjs/toolkit": "^1.8.5",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.2.2",
-    "bootstrap": "^5.2.3",
+    "@testing-library/user-event": "^14.4.3",
+    "axios": "^0.27.2",
+    "bootstrap": "^5.2.1",
+    "csstree-validator": "^3.0.0",
+    "formik": "^2.2.9",
+    "gsap": "^3.11.2",
+    "nanoid": "^4.0.0",
+    "node-sass": "^7.0.3",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.5.0",
+    "react-datepicker": "^4.8.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.7.1",
-    "react-notifications": "^1.7.4",
-    "react-redux": "^8.0.5",
-    "react-router-dom": "^6.6.1",
-    "react-scripts": "5.0.1",
-    "sass": "^1.57.1",
-    "web-vitals": "^2.1.4"
+    "react-icons": "^4.4.0",
+    "react-multi-carousel": "^2.8.2",
+    "react-redux": "^8.0.2",
+    "react-router-dom": "^6.4.0",
+    "react-scripts": "^5.0.1",
+    "react-spring": "^9.5.4",
+    "redux": "^4.2.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.4.1",
+    "sass": "^1.54.9",
+    "swiper": "^8.4.2",
+    "uuid": "^9.0.0",
+    "web-vitals": "^3.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.1",
+    "@babel/eslint-parser": "^7.19.1",
+    "@babel/plugin-syntax-jsx": "^7.18.6",
+    "@babel/preset-env": "^7.19.1",
+    "@babel/preset-react": "^7.18.6",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.21.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "lint": "npx eslint . --fix; npx stylelint \"**/*.{css,scss}\" --fix"
   },
   "browserslist": {
     "production": [
@@ -42,23 +69,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@babel/core": "^7.20.12",
-    "@babel/eslint-parser": "^7.19.1",
-    "@babel/plugin-syntax-jsx": "^7.18.6",
-    "@babel/preset-env": "^7.20.2",
-    "@babel/preset-react": "^7.18.6",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsx-a11y": "^6.7.0",
-    "eslint-plugin-react": "^7.31.11",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "stylelint": "^13.13.1",
-    "stylelint-config-standard": "^21.0.0",
-    "stylelint-csstree-validator": "^1.9.0",
-    "stylelint-scss": "^3.21.0",
-    "tailwindcss": "^3.2.4"
   }
 }
