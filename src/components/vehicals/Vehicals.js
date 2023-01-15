@@ -1,13 +1,16 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import axios from "axios";
 import { nanoid } from "nanoid";
-import VehicalCard from "./vehical";
 import BASE_URL from "../../api";
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import '../assets/styles/swiper.scss';
+import 'swiper/css/bundle';
+import { Pagination, Navigation } from 'swiper';
+import VehicalCard from "./vehical";
 const VehicalList = () => {
   const [Vehicals, setVehicals] = useState([]);
-
+  console.log(Vehicals)
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(`${BASE_URL}api/v1/vehicles/`);
@@ -17,13 +20,37 @@ const VehicalList = () => {
   }, []);
 
   return (
-    <div className="wrapper">
-      {Vehicals.length
-        ? Vehicals.map((Vehical) => (
-            <VehicalCard key={nanoid()} vehical={Vehical} />
-          ))
-        : null}
-    </div>
+    <>
+      <div className=" container-swipper">
+        <Swiper
+          centeredSlides
+          pagination={{ clickable: true }}
+          spaceBetween={2}
+          slidesPerView={1}
+          breakpoints={{
+            // when window width is >= 768px
+            768: {
+              width: 768,
+              slidesPerView: 1,
+            },
+          }}
+          navigation
+          modules={[Pagination, Navigation]}
+          className="swipper">
+          <div className="sliders">
+            {Vehicals.length
+              ? Vehicals.map((Vehical) => (
+                <SwiperSlide key={nanoid()}>
+                  <div className="sliderCard ">
+                    <VehicalCard key={nanoid()} vehical={Vehical} />
+                  </div>
+                </SwiperSlide>
+              ))
+              : null}
+          </div>
+        </Swiper>
+      </div>
+    </>
   );
 };
 

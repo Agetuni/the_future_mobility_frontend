@@ -1,8 +1,8 @@
+import axios from 'axios';
+import BASE_URL from '../../api';
+import '../assets/styles/vehicle.scss';
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import axios from 'axios';
-import './vehicaldetail.scss';
-import BASE_URL from '../../api';
 
 const VehicalDetails = () => {
   const params = useParams();
@@ -24,45 +24,49 @@ const VehicalDetails = () => {
   }, []);
 
   return (
-    <div className="wrapper">
-      <div>
-        
-      </div>
-      <div className="vehical-details-container">
-        <div className="vehical-image">
-          {vehical.image ? (
-            <img
-              src={`${vehical.image}`}
-              alt="" width="200px"
-            />
-          ) : (
-            <img
-              src={vehical.image}
-              alt=""
-            />
-          )}
-          <h1 className="vehical-model">model</h1>
-        </div>
+      <div className="container">
+        <div className="row detail">
+          <div className="col-sm detail-img ">
+            {vehical.image ? (
+              <img
+                src={`${vehical.image}`}
+                alt="Vehicle Image" className='responsive'
+              />
+            ) : (
+              <img
+                src={vehical.image}
+                alt="Vehicle Image"
+              />
+            )}
+          </div>
+          <div className="col-sm  ">
+            <div className='detail-model'>
+              VESPA 946
+            </div>
+            <div className='detial-info-texts shade'>
+              <span>Engine Power</span> <span>158 hp @ 5,500 rpm</span>
+            </div>
+            <div className='detial-info-texts'>
+              <span>Engine Torque</span> <span>158 hp @ 5,500 rpm</span>
+            </div>
+            <div className='detial-info-texts shade'>
+              <span>Transmition</span> <span>8-speed shiftable automatic</span>
+            </div>
+            <div className='detial-info-texts'>
+              <span>Fuel Capacity</span> <span>13.2 gal. </span>
+            </div>
+            <div className='detial-info-texts shade'>
+              <span>Seat</span> <span>4 </span>
+            </div>
+            
+            <div className='detail-reserve'>
+          <button type="button" className="btn btn-primary btn-lg btn-block detail-reserve-btn">Reserve</button>
 
-        <div className="vehical-info">
+            </div>
 
-          <ul className="vehical-spec-details">
-            <li>
-              Model:
-              XX
-            </li>
-           
-          </ul>
-          <Link
-                to={`/vehical/${params.id}/reservation`}
-              >
-                <button type="button" className="reserve-btn">
-                  Reserve
-                </button>
-              </Link>
+          </div>
         </div>
       </div>
-    </div>
   );
 };
 

@@ -64,7 +64,7 @@ export const logout = () => async (dispatch) => {
 
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
-  fetch('http://localhost:3000/logout', {
+  fetch('http://localhost:3001/logout', {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
