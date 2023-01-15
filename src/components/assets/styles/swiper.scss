@@ -1,64 +1,78 @@
-@import 'design';
+.container-swipper {
+  height: 80vh;
+  width: 100%;
+  z-index: 0;
+}
 
-.category-container {
-  height: 100vh;
+.swipper {
+  height: 100%;
+  width: 85vw;
+  z-index: 0;
+}
+
+.sliders {
+  height: 100%;
+  width: 100%;
+}
+
+.sliderCard {
+  width: 90%;
+  height: 90%;
+  margin: auto;
+  z-index: 0;
+}
+// .blue{
+//   background-color: blue;
+// }
+// .pink{
+//   background-color: pink;
+// }
+
+// .green{
+//   background-color: green;
+// }
+.vehicle-image-container {
+  border-radius: 60%;
+  width: 60vh;
+  background-color: #d3ece9;
+  height: 60vh;
   display: flex;
-}
-
-.swiper {
-  margin: 0;
-}
-
-.swiper-wrapper {
-  height: 100vh;
-  padding: 0 3rem;
-  width: 70%;
-}
-
-.swiper-slide {
-  margin-top: 5rem;
-  height: 50%;
-  width: 20%;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  justify-content: center;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  width: 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem;
-  background-color: #97bf0e;
-  color: hsl(0deg, 0%, 100%);
+.vehicle-image {
+  width: 40vh;
+  height: 40vh;
   border-radius: 50%;
-  font-size: 0.5rem;
-  height: 4rem;
-  aspect-ratio: 1 / 1;
 }
 
-@media screen and (max-width: 768px) {
-  .category-container {
-    height: 100%;
+.vehice-detail p {
+  margin-top: 2vh;
+  font-family: "Lato", sans-serif;
+  text-decoration: none !important;
+  color: black;
+  text-align: center;
+}
+
+.vehice-detail-paragraph {
+  color: grey !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .vehicle-image-container {
+    border-radius: 60%;
+    width: 40vh;
+    background-color: #d3ece9;
+    height: 40vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin: auto;
+    justify-content: center;
   }
 
-  .swiper-wrapper {
-    height: 100vh;
-    padding: 0 3rem;
-    width: 100%;
-  }
-
-  .swiper-slide {
-    width: 100%;
+  .vehicle-image {
+    width: 30vh;
+    height: 30vh;
+    border-radius: 50%;
   }
 }
