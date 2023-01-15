@@ -7,7 +7,7 @@ import delres from '../../redux/reservations/delresSlice'
 import BASE_URL from '../../api';
 
 const MyReservations = () => {
-  const userid =localStorage.getItem('id')
+  const userid =localStorage.getItem('id') // use this is as param
   const [loading, setLoading] = useState(true);
   const [myreservations, setMyReservations] = useState([]);
   useEffect(() => {
