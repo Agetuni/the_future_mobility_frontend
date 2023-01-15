@@ -38,7 +38,13 @@ const SideMenu = ({ children }) => {
                         </li>
                         <li>
                             <NavLink
-                                to={'/Reservation'} className="s-sidebar__nav-link" href="#0">
+                                to={'/deleteVehicle'} className="s-sidebar__nav-link" href="#0">
+                                <i className="fa fa-home"></i><em>Delete Vehicle</em>
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                to={'/myReservations'} className="s-sidebar__nav-link" href="#0">
                                 <i className="fa fa-home"></i><em>My Reservation</em>
                             </NavLink>
                         </li>

@@ -24,22 +24,23 @@ const VehicalDetails = () => {
   }, []);
 
   return (
-      <div className="container">
-        <div className="row detail">
-          <div className="col-sm detail-img ">
-            {vehical.image ? (
-              <img
-                src={`${vehical.image}`}
-                alt="Vehicle Image" className='responsive'
-              />
-            ) : (
-              <img
-                src={vehical.image}
-                alt="Vehicle Image"
-              />
-            )}
-          </div>
-          <div className="col-sm  ">
+    <div className="container">
+      <div className="row detail">
+        <div className="col-sm detail-img ">
+          {vehical.image ? (
+            <img
+              src={`${vehical.image}`}
+              alt="Vehicle Image" className='responsive'
+            />
+          ) : (
+            <img
+              src={vehical.image}
+              alt="Vehicle Image"
+            />
+          )}
+        </div>
+        <div className="col-sm  detail-info-container">
+          <div className='detail-info'>
             <div className='detail-model'>
               VESPA 946
             </div>
@@ -58,15 +59,16 @@ const VehicalDetails = () => {
             <div className='detial-info-texts shade'>
               <span>Seat</span> <span>4 </span>
             </div>
-            
+
             <div className='button-green'>
-          <button type="button" className="btn btn-primary btn-lg btn-block detail-reserve-btn">Reserve</button>
+              <Link to='/reserve' type="button" className="btn btn-primary btn-lg btn-block detail-reserve-btn">Reserve</Link>
 
             </div>
-
           </div>
+
         </div>
       </div>
+    </div>
   );
 };
 
