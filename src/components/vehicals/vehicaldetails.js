@@ -59,7 +59,7 @@ const VehicalDetails = () => {
               <span>Seat</span> <span>4 </span>
             </div>
             
-            <div className='detail-reserve'>
+            <div className='button-green'>
           <button type="button" className="btn btn-primary btn-lg btn-block detail-reserve-btn">Reserve</button>
 
             </div>
