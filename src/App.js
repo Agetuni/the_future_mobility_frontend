@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import VehicalDetails from './components/vehicals/vehicaldetails';
 import MyReservations from './components/reservations/MyReservations';
 import SideMenu from './components/layouts/sidemenu';
+import AddVehicle from './components/vehicals/addVehicle';
 const App = () => {
   const user = useSelector((state) => state.user);
   console.log(user);
@@ -17,6 +18,7 @@ const App = () => {
         <SideMenu>
           <Routes>
             <Route path='/' element={<VehicalList />} />
+            <Route path='/AddVehicle' element={<AddVehicle />} />
             <Route path="/vehicals/:id" element={<VehicalDetails />} />
           </Routes>
         </SideMenu>

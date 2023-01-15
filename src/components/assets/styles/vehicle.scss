@@ -76,15 +76,22 @@
   font-size: 5vh;
 }
 
-.detail-reserve {
+.button-green {
+  margin-top: 5vh;
   display: flex;
   justify-content: end;
   align-items: end;
-  margin-top: 5vh;
+  padding: 1vh 0;
 }
 
-.detail-reserve-btn {
-  width: 20vh;
-  height: 10vh;
-  font-size: 23vh;
+.add-vehicle-container {
+  width: 100%;
+  height: 90vh;
+  margin-top: 10vh;
+}
+
+.add-vehicle-header {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 5vh;
 }

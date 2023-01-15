@@ -32,7 +32,7 @@ const SideMenu = ({ children }) => {
                         </li>
                         <li>
                             <NavLink
-                                to={'/AddVehicles'} className="s-sidebar__nav-link" href="#0">
+                                to={'/AddVehicle'} className="s-sidebar__nav-link" href="#0">
                                 <i className="fa fa-home"></i><em>Add Vehicle</em>
                             </NavLink>
                         </li>
