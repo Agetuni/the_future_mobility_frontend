@@ -36,13 +36,17 @@ export const login = (user) => async (dispatch) => {
     },
     body: JSON.stringify(userdata.user),
   });
+  console.log(response)
   const token = response.headers.get('Authorization');
+
   const data = await response.json();
+  
   if (response.status === 200) {
     const localdata = {
       // add email 
-       name: data.name,
-      token: data.token
+      name: data.name,
+      token: data.token,
+      id:data.id
     };
     localStorage.setItem('user', JSON.stringify(localdata));
     dispatch({

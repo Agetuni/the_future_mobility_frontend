@@ -7,15 +7,18 @@ import delres from '../../redux/reservations/delresSlice'
 import BASE_URL from '../../api';
 
 const MyReservations = () => {
-  const params = useParams();
+  const userid =localStorage.getItem('id')
   const [loading, setLoading] = useState(true);
   const [myreservations, setMyReservations] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(
-        `${BASE_URL}/api/v1/users/${params.id}/reservations`,
-        
-        
+      
+      const response = await axios.get(`${BASE_URL}api/v1/users/1/reservations`, //u can add user id from localstorage
+        {
+        headers: {
+          Authorization: `${localStorage.getItem('token')}`,
+        },
+      }
       );
       setLoading(false);
       console.log(response.data);
@@ -28,7 +31,7 @@ const MyReservations = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const user = 2;// JSON.parse(localStorage.getItem('user'));
+
 
   
   const delHandler = (value) => {
@@ -51,59 +54,18 @@ const MyReservations = () => {
         </div>
         <div className="myres-container">
           <h1>My Reservations</h1>
+          
           <div className="reservations">
-            <table>
-            <thead>
-                <tr>
-                  <th>Reserve ID</th>
-                  <th>Vehical ID</th>
-                  <th>Start Date</th>
-                  <th>End Date</th>
-                 
-                  <th>Address</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                {loading === false
-                  && Object.values(myreservations)
-                    .filter((reservation) => reservation.user_id === user)
-                    .map((reservation) => (
-                      <tr key={nanoid()}>
-                        <td>{reservation.id}</td>
-                        <td>
-                          <Link
-                            to={`/vehicals/${reservation.vehical_id}`}
-                            style={{
-                              color: '#97bf36',
-                              border: '1px solid #97bf36',
-                              padding: '0.5rem',
-                            }}
-                          >
-                            {reservation.vehical_id}
-                          </Link>
-                        </td>
-                        <td>{reservation.start_date}</td>
-                        <td>{reservation.end_date}</td>
-                       
-                        <td>{reservation.address}</td>
-                        <td>
-                        <button
-                            type="button"
-                            className="cancelBtn"
-                            value={reservation.id}
-                            onClick={(e) => {
-                              
-                              cancelHandler(reservation.vehical_id);
-                            }}
-                          >
-                            Cancel
-                          </button>
-                        </td>
-                      </tr>
-                    ))}
-              </tbody>
-            </table>
+            {
+              myreservations.map((res) => {
+                return (
+                  <>
+                  <p>{res.id} </p>
+                  </>
+                )
+              })
+              
+            }
           </div>
         </div>
       </div>
