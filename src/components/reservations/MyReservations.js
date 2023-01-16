@@ -55,11 +55,11 @@ const MyReservations = () => {
    {  myreservations.map((reservation)=>{
       return(
       <>
-        <p>reservation.id</p>
-          <p>reservation.date</p>
-          <p>reservation.address</p>
-          <p>reservation.user_id</p>
-          <p>reservation.vehicle.id</p>
+        <p>{ reservation.id}</p>
+          <p>{reservation.date}</p>
+          <p>{reservation.address}</p>
+          <p>{reservation.user_id}</p>
+          <p>{reservation.vehicle_id}</p>
       </>
         )
     })}
