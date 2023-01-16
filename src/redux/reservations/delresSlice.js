@@ -2,9 +2,6 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import BASE_URL from '../../api';
 
-
-const token = JSON.parse(localStorage.getItem('user')).token
-
 const initialState = {
   loading: false,
   myreservation: '',
@@ -13,10 +10,11 @@ const initialState = {
 
 export const delres = createAsyncThunk('reservation/delres', (myreservation) => axios
   .delete(
-    `${BASE_URL}api/v1/users/1/reservations/${myreservation.id}`,
+ `${BASE_URL}api/v1/users/${userid}/reservations/${myreservation.id}`,
+
     {
       headers: {
-        Authorization: token,
+        Authorization: `${JSON.parse(localStorage.getItem('user')).token}`,
       },
       
     },

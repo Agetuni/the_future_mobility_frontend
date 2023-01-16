@@ -15,7 +15,7 @@ const Main = () => {
       <main className="splashscreen-container">
         <section className="splashscreen-content">
                   <h2 className="splashscreen-message">Welcome To Moblity Future</h2>  
-                  <NavLink to="/register" className="button splashscreen-button">
+                  <NavLink to="/signup" className="button splashscreen-button">
             Register
           </NavLink>       
               </section>

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import reservation from './reservation.service';
+import addreservation from './addreservation.service';
 import myReservations from './myreservations.service';
 
 const reservationSlice = createSlice({
@@ -9,14 +9,14 @@ const reservationSlice = createSlice({
     status: null,
   },
   extraReducers: {
-    [reservation.fulfilled]: (state, action) => {
+    [addreservation.fulfilled]: (state, action) => {
       state.reservation = [...state.reservation, action.payload];
       state.status = 'success';
     },
-    [reservation.pending]: (state) => {
+    [addreservation.pending]: (state) => {
       state.status = 'loading';
     },
-    [reservation.rejected]: (state) => {
+    [addreservation.rejected]: (state) => {
       state.reservation = [];
       state.status = 'failed';
     },

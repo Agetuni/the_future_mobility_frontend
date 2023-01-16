@@ -8,24 +8,21 @@ import BASE_URL from '../../api';
 import '../assets/styles/reservation.scss';
 
 
-const userid = JSON.parse(localStorage.getItem('user')).id
-const token = JSON.parse(localStorage.getItem('user')).token
-const name = JSON.parse(localStorage.getItem('user')).className
-
-console.log(userid)
 const MyReservations = () => {
-  
+
   const [loading, setLoading] = useState(true);
   const [myreservations, setMyReservations] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
+
       const response = await axios.get(
-        `${BASE_URL}/api/v1/users/${userid}/reservations`,
+        `${BASE_URL}/api/v1/users/${JSON.parse(localStorage.getItem('user')).id}/reservations`,
         {
           headers: {
-            Authorization: token,
+            Authorization: `${JSON.parse(localStorage.getItem('user')).token}`,
           },
         }
+
 
       );
       setLoading(false);
@@ -39,7 +36,7 @@ const MyReservations = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const user = 2;// JSON.parse(localStorage.getItem('user'));
+
 
 
   const delHandler = (value) => {
@@ -52,9 +49,21 @@ const MyReservations = () => {
     navigate('/vehicals');
   };
   return (
-    <><p>/myreservations no have all data</p>
-      
 
+    <>
+      <div>
+   {  myreservations.map((reservation)=>{
+      return(
+      <>
+        <p>{ reservation.id}</p>
+          <p>{reservation.date}</p>
+          <p>{reservation.address}</p>
+          <p>{reservation.user_id}</p>
+          <p>{reservation.vehicle_id}</p>
+      </>
+        )
+    })}
+        </div>
     </>
   );
 };
