@@ -9,6 +9,8 @@ import VehicalDetails from './components/vehicals/vehicaldetails';
 import MyReservations from './components/reservations/MyReservations';
 import SideMenu from './components/layouts/sidemenu';
 import AddVehicle from './components/vehicals/addVehicle';
+import AddReservation from './components/reservations/reservation';
+import DeleteVehicle from './components/vehicals/deleteVehicle';
 const App = () => {
   const user = useSelector((state) => state.user);
   console.log(user);
@@ -20,7 +22,13 @@ const App = () => {
             <Route path='/' element={<VehicalList />} />
             <Route path='/AddVehicle' element={<AddVehicle />} />
             <Route path="/vehicals/:id" element={<VehicalDetails />} />
+
             <Route path='/reservations' element={<MyReservations />} />
+
+            
+            <Route path='/reserve' element={<AddReservation/>} />
+            <Route path='/deleteVehicle' element={<DeleteVehicle/>} />
+
           </Routes>
         </SideMenu>
       ) :

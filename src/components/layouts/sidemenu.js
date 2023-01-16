@@ -38,9 +38,15 @@ const SideMenu = ({ children }) => {
                         </li>
                         <li>
                             <NavLink
+
                                 to={'/reservations'} className="s-sidebar__nav-link" href="#0">
-                                <i className="fa fa-home"></i><em>My Reservation</em>
+
+                                to={'/deleteVehicle'} className="s-sidebar__nav-link" href="#0">
+                                <i className="fa fa-home"></i><em>Delete Vehicle</em>
                             </NavLink>
+                        </li>
+                        <li>
+                            
                         </li>
                         <li onClick={() => {
                             dispatch(logout()); navigate('/');

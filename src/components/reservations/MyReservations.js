@@ -5,6 +5,7 @@ import { nanoid } from '@reduxjs/toolkit';
 import axios from 'axios';
 import delres from '../../redux/reservations/delresSlice'
 import BASE_URL from '../../api';
+import '../assets/styles/reservation.scss';
 
 const MyReservations = () => {
   const userid =localStorage.getItem('id') // use this is as param
@@ -12,6 +13,7 @@ const MyReservations = () => {
   const [myreservations, setMyReservations] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
+
       
       const response = await axios.get(`${BASE_URL}api/v1/users/1/reservations`, //u can add user id from localstorage
         {
@@ -19,13 +21,14 @@ const MyReservations = () => {
           Authorization: `${localStorage.getItem('token')}`,
         },
       }
+
       );
       setLoading(false);
       console.log(response.data);
       setMyReservations(response.data);
     };
     fetchData();
-    
+
   }, []);
 
   const dispatch = useDispatch();
@@ -33,21 +36,19 @@ const MyReservations = () => {
 
 
 
-  
+
   const delHandler = (value) => {
     dispatch(delres({ id: value }));
   };
 
   const cancelHandler = (value) => {
     const state = { id: value, reserved: false };
-    
+
     navigate('/vehicals');
   };
-
- 
-
   return (
     <>
+
       <div className="wrapper">
         <div>
           
@@ -68,7 +69,10 @@ const MyReservations = () => {
             }
           </div>
         </div>
+
+    
       </div>
+
     </>
   );
 };

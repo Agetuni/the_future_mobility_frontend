@@ -10,7 +10,6 @@ import { Pagination, Navigation } from 'swiper';
 import VehicalCard from "./vehical";
 const VehicalList = () => {
   const [Vehicals, setVehicals] = useState([]);
-  console.log(Vehicals)
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(`${BASE_URL}api/v1/vehicles/`);

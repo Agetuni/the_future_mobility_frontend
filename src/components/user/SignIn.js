@@ -3,7 +3,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { login } from '../../redux/users/user_reducer';
-
+import Vespalogo from '../layouts/logo';
 const Signin= () => {
 	const [formData, setFormData] = React.useState({
 		email: '',
@@ -34,8 +34,10 @@ const Signin= () => {
 
 	return (
 		<div className="Auth-container">
+		
 			<form onSubmit={handleSubmit} className="Auth-form">
 				<div className="Auth-content">
+				<Vespalogo/>
 					<h3 className="Auth-title">Sign In</h3>
 					<div className="form-group mt-3 text-start">
 						<label htmlFor="email" >Email</label>
