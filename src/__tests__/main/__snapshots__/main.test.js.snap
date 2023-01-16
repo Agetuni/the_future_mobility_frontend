@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main component match snapshot, landing page 1`] = `
+<main
+  className="splashscreen-container"
+>
+  <section
+    className="splashscreen-content"
+  >
+    <h2
+      className="splashscreen-message"
+    >
+      Welcome To Moblity Future
+    </h2>
+    <a
+      className="button splashscreen-button"
+      href="/signup"
+      onClick={[Function]}
+    >
+      Register
+    </a>
+  </section>
+</main>
+`;
