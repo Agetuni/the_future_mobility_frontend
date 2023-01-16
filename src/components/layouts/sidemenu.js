@@ -39,10 +39,13 @@ const SideMenu = ({ children }) => {
                         <li>
                             <NavLink
 
-                                to={'/reservations'} className="s-sidebar__nav-link" href="#0">
+                                
 
                                 to={'/deleteVehicle'} className="s-sidebar__nav-link" href="#0">
                                 <i className="fa fa-home"></i><em>Delete Vehicle</em>
+                            </NavLink>
+                            <NavLink to={'/reservations'} className="s-sidebar__nav-link" href="#0">
+                            
                             </NavLink>
                         </li>
                         <li>
