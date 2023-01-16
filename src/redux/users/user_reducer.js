@@ -41,7 +41,7 @@ export const login = (user) => async (dispatch) => {
   if (response.status === 200) {
     const localdata = {
       // add email 
-       name: data.name,
+      name: data.name,
       token: data.token
     };
     localStorage.setItem('user', JSON.stringify(localdata));
