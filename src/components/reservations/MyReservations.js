@@ -50,10 +50,20 @@ const MyReservations = () => {
   };
   return (
 
-    <><p>/myreservations now have all data</p>
-      
-
-
+    <>
+      <div>
+   {  myreservations.map((reservation)=>{
+      return(
+      <>
+        <p>reservation.id</p>
+          <p>reservation.date</p>
+          <p>reservation.address</p>
+          <p>reservation.user_id</p>
+          <p>reservation.vehicle.id</p>
+      </>
+        )
+    })}
+        </div>
     </>
   );
 };
