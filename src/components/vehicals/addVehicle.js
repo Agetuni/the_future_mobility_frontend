@@ -1,4 +1,5 @@
 import '../assets/styles/vehicle.scss';
+import newvehical from '../../redux/vehical/vehical.service'
 
 const AddVehicle = () => (
   <div className="container add-vehicle-container">

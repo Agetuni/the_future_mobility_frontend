@@ -1,8 +1,16 @@
 import BASE_URL from "../../api";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { nanoid } from "nanoid";
+import { deletevehical } from "../../redux/vehical/delvehicalSlice";
+
+
+
 const DeleteVehicle = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [Vehicals, setVehicals] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
@@ -11,6 +19,13 @@ const DeleteVehicle = () => {
         };
         fetchData();
     }, []);
+
+
+    const delHandler = (value) => {
+        dispatch(deletevehical({ id: value }));
+        navigate('/')
+    };
+    
     return (
         <div className="container">
             <div className="delete-vehicle-container">
@@ -24,7 +39,17 @@ const DeleteVehicle = () => {
                                <img src={Vehical.image} width="100%" height="100%"/>
                                     <div className="card-body">
                                        
-                                        <a href="#" className="btn btn-danger"> Delete {Vehical.name}</a>
+                                    <button
+                            type="button"
+                            className="dangerbtn"
+                            value={Vehical.id}
+                            onClick={(e) => {
+                              delHandler(e.target.value);
+                              
+                            }}
+                          >
+                            DeleteVehicle
+                          </button>
                                     </div>
                             </div>
                            

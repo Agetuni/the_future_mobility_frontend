@@ -58,7 +58,6 @@
 
 .detail-info-container {
   width: 100%;
-  display: flex;
   justify-content: end;
   align-items: center;
 }
@@ -107,7 +106,7 @@
 }
 
 .vehicle-delete-card {
-  // height: 20vh;
+  height: 40vh;
 }
 
 .delete-vehicle-img {
