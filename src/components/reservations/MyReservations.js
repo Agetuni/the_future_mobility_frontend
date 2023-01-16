@@ -7,15 +7,25 @@ import delres from '../../redux/reservations/delresSlice'
 import BASE_URL from '../../api';
 import '../assets/styles/reservation.scss';
 
+
+const userid = JSON.parse(localStorage.getItem('user')).id
+const token = JSON.parse(localStorage.getItem('user')).token
+const name = JSON.parse(localStorage.getItem('user')).className
+
+console.log(userid)
 const MyReservations = () => {
-  const params = useParams();
+  
   const [loading, setLoading] = useState(true);
   const [myreservations, setMyReservations] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `${BASE_URL}/api/v1/users/${params.id}/reservations`,
-
+        `${BASE_URL}/api/v1/users/${userid}/reservations`,
+        {
+          headers: {
+            Authorization: token,
+          },
+        }
 
       );
       setLoading(false);
@@ -42,45 +52,8 @@ const MyReservations = () => {
     navigate('/vehicals');
   };
   return (
-    <>
-      <div className="container reservation-container">
-        <span className='myreservatin-header'> My Reservation</span>
-        <table className="table table-striped">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Reservation Number</th>
-              <th scope="col">Vehical</th>
-              <th scope="col">Start Date</th>
-              <th scope="col">End Date</th>
-
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-              <td>@twitter</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <><p>/myreservations no have all data</p>
+      
 
     </>
   );

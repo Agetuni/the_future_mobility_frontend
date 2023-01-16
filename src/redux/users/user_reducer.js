@@ -42,9 +42,11 @@ export const login = (user) => async (dispatch) => {
     const localdata = {
       // add email 
        name: data.name,
-      token: data.token
+      token: data.token,
+      id:data.id
     };
     localStorage.setItem('user', JSON.stringify(localdata));
+    localStorage.setItem('id', JSON.stringify(localdata.id));
     dispatch({
       type: LOG_IN,
       payload: data,

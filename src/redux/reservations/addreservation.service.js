@@ -3,14 +3,16 @@ import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import BASE_URL from '../../api';
 
-const params = useParams();
+const userid = JSON.parse(localStorage.getItem('user')).id
+const token = JSON.parse(localStorage.getItem('user')).token
+const name = JSON.parse(localStorage.getItem('user')).className
 const addreservation = createAsyncThunk(
   
   'reservation/addreservation',
   (reservation) => {
-    axios.post(`${BASE_URL}api/v1/${params.id}/reservation`, reservation, {
+    axios.post(`${BASE_URL}api/v1/${userid}/reservation`, reservation, {
       headers: {
-        Authorization: `${localStorage.getItem('token')}`,
+        Authorization: token,
       },
     })
       .then((response) => {
