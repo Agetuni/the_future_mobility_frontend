@@ -8,11 +8,6 @@ import BASE_URL from '../../api';
 import '../assets/styles/reservation.scss';
 
 
-const userid = JSON.parse(localStorage.getItem('user')).id
-const token = JSON.parse(localStorage.getItem('user')).token
-const name = JSON.parse(localStorage.getItem('user')).className
-
-console.log(userid)
 const MyReservations = () => {
 
   const [loading, setLoading] = useState(true);
@@ -21,10 +16,10 @@ const MyReservations = () => {
     const fetchData = async () => {
 
       const response = await axios.get(
-        `${BASE_URL}/api/v1/users/${userid}/reservations`,
+        `${BASE_URL}/api/v1/users/${JSON.parse(localStorage.getItem('user')).id}/reservations`,
         {
           headers: {
-            Authorization: token,
+            Authorization: `${JSON.parse(localStorage.getItem('user')).token}`,
           },
         }
 
