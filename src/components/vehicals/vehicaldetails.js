@@ -9,14 +9,14 @@ const VehicalDetails = () => {
   const [vehical, setvehical] = useState([]);
 
 
-  console.log(localStorage.getItem('token'))
+  
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
         `${BASE_URL}api/v1/vehicles/${params.id}`,
         {
           headers: {
-            Authorization: `${localStorage.getItem('token')}`,
+            Authorization: `${JSON.parse(localStorage.getItem('user')).token}`,
           },
         },
       );
