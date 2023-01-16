@@ -10,12 +10,13 @@ const initialState = {
 
 export const delres = createAsyncThunk('reservation/delres', (myreservation) => axios
   .delete(
-    `${BASE_URL}api/v1/users/1/reservations/2`,
+ `${BASE_URL}api/v1/users/${userid}/reservations/${myreservation.id}`,
+
     {
       headers: {
-        Authorization: `${localStorage.getItem('token')}`,
+        Authorization: `${JSON.parse(localStorage.getItem('user')).token}`,
       },
-      data: myreservation,
+      
     },
   )
   .then((response) => response.data));
