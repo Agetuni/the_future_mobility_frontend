@@ -2,6 +2,8 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import BASE_URL from "../../api";
 
+const token = JSON.parse(localStorage.getItem('user')).token
+
 const initialState = {
     loading: false,
     vehical: '',
@@ -12,7 +14,7 @@ export const deletevehical = createAsyncThunk('vehical/deletevehical', (vehical)
   axios.delete(`${BASE_URL}api/v1/vehicles/${vehical.id}`,
     {
         headers: {
-            Authorization: `${localStorage.getItem('token')}`,
+            Authorization: token,
         },
     }
     ).then((response) => response.data));

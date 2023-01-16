@@ -16,7 +16,7 @@ const addreservation = createAsyncThunk(
       },
     })
       .then((response) => {
-        useNavigate('/my_reservations');
+        useNavigate('/myReservations');
         const { data } = response;
         return data;
       });
