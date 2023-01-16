@@ -8,7 +8,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import VehicalDetails from './components/vehicals/vehicaldetails';
 import MyReservations from './components/reservations/MyReservations';
 import SideMenu from './components/layouts/sidemenu';
-import AddVehicle from './components/vehical/addVehicle';
+import AddVehicle from './components/vehicals/addVehicle';
 import AddReservation from './components/reservations/reservation';
 import DeleteVehicle from './components/vehicals/deleteVehicle';
 const App = () => {

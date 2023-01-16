@@ -1,4 +1,5 @@
 /* eslint-disable */
+import axios from "axios";
 const ADD_VEHICAL = 'ADD_VEHICAL';
 const REMOVE_VEHICAL = 'REMOVE_VEHICAL';
 const GET_VEHICALS = 'GET_VEHICALS';
@@ -23,19 +24,17 @@ export const vehicalReducer = (state = initialState, action) => {
 
 export const AddVehicleSlice = (request) => {
   console.log(JSON.stringify(request))
+  const headers = { 
+    'Authorization': JSON.parse(localStorage.getItem('user')).token
+};
   return async (dispatch) => {
     dispatch({
       type: 'SET_LOADING',
     });
     await new Promise((resolve) => setTimeout(resolve, 1000));    
-    const response = await fetch('http://localhost:3001/api/v1/vehicles', {
-      method: 'POST',
-      headers: {
-        Authorization: JSON.parse(localStorage.getItem('user')).token,
-      },
-      body: JSON.stringify(request),
-    });
-    const data = await response.json();
+    const response = await axios.post('http://localhost:3001/api/v1/vehicles', request,{ headers });
+    console.log(response);
+    const data = await response;
     dispatch({ type: ADD_VEHICAL, payload: data });
     dispatch({
       type: 'SET_LOADING',

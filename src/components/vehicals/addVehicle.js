@@ -22,8 +22,10 @@ const AddVehicle = () => {
       [e.target.name]: e.target.value,
     });
   };
+  const navigate = useNavigate();
   const submitValue = (formData) => {
     dispatch(AddVehicleSlice(formData));
+    navigate('/')
   };
   const validateFields = (form) => {
     if (vehical.name !== '' && vehical.image !== '' && vehical.enginepower !== '' && vehical.enginetourque !== '' && vehical.transmission !== '' && vehical.fuel_capacity !== '' && vehical.seat !== '') {
