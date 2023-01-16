@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { AddVehicleSlice } from '../../redux/vehical/vehical_reducer';
 import '../assets/styles/vehicle.scss';
+import newvehical from '../../redux/vehical/vehical.service'
 
 const AddVehicle = () => {
   const dispatch = useDispatch();
