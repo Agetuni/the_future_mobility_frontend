@@ -7,20 +7,27 @@ import delres from '../../redux/reservations/delresSlice'
 import BASE_URL from '../../api';
 import '../assets/styles/reservation.scss';
 
+
+const userid = JSON.parse(localStorage.getItem('user')).id
+const token = JSON.parse(localStorage.getItem('user')).token
+const name = JSON.parse(localStorage.getItem('user')).className
+
+console.log(userid)
 const MyReservations = () => {
-  const userid =localStorage.getItem('id') // use this is as param
+
   const [loading, setLoading] = useState(true);
   const [myreservations, setMyReservations] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
 
-      
-      const response = await axios.get(`${BASE_URL}api/v1/users/1/reservations`, //u can add user id from localstorage
+      const response = await axios.get(
+        `${BASE_URL}/api/v1/users/${userid}/reservations`,
         {
-        headers: {
-          Authorization: `${localStorage.getItem('token')}`,
-        },
-      }
+          headers: {
+            Authorization: token,
+          },
+        }
+
 
       );
       setLoading(false);
@@ -47,31 +54,10 @@ const MyReservations = () => {
     navigate('/vehicals');
   };
   return (
-    <>
 
-      <div className="wrapper">
-        <div>
-          
-        </div>
-        <div className="myres-container">
-          <h1>My Reservations</h1>
-          
-          <div className="reservations">
-            {
-              myreservations.map((res) => {
-                return (
-                  <>
-                  <p>{res.id} </p>
-                  </>
-                )
-              })
-              
-            }
-          </div>
-        </div>
+    <><p>/myreservations now have all data</p>
+      
 
-    
-      </div>
 
     </>
   );

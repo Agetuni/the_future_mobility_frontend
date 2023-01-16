@@ -8,6 +8,8 @@ const VehicalDetails = () => {
   const params = useParams();
   const [vehical, setvehical] = useState([]);
 
+
+  console.log(localStorage.getItem('token'))
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
