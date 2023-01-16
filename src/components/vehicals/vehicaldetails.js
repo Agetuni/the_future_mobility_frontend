@@ -44,22 +44,22 @@ const VehicalDetails = () => {
         <div className="col-sm  detail-info-container">
           <div className='detail-info'>
             <div className='detail-model'>
-              VESPA 946
+              {vehical.name}
             </div>
             <div className='detial-info-texts shade'>
-              <span>Engine Power</span> <span>158 hp @ 5,500 rpm</span>
+              <span>Engine Power</span> <span>  {vehical.enginepower}</span>
             </div>
             <div className='detial-info-texts'>
-              <span>Engine Torque</span> <span>158 hp @ 5,500 rpm</span>
+              <span>Engine Torque</span> <span> {vehical.enginetourque}</span>
             </div>
             <div className='detial-info-texts shade'>
-              <span>Transmition</span> <span>8-speed shiftable automatic</span>
+              <span>Transmition</span> <span>{vehical.transmission}</span>
             </div>
             <div className='detial-info-texts'>
-              <span>Fuel Capacity</span> <span>13.2 gal. </span>
+              <span>Fuel Capacity</span> <span>{vehical.fuel_capacity} </span>
             </div>
             <div className='detial-info-texts shade'>
-              <span>Seat</span> <span>4 </span>
+              <span>Seat</span> <span>{vehical.seat} </span>
             </div>
 
             <div className='button-green'>

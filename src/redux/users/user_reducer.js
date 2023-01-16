@@ -43,8 +43,6 @@ export const login = (user) => async (dispatch) => {
   
   if (response.status === 200) {
     const localdata = {
-      // add email 
-
       name: data.name,
       token: data.token,
       id:data.id
