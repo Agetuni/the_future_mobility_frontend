@@ -22,23 +22,17 @@ const App = () => {
             <Route path='/' element={<VehicalList />} />
             <Route path='/AddVehicle' element={<AddVehicle />} />
             <Route path="/vehicals/:id" element={<VehicalDetails />} />
-
-            <Route path='/reservations' element={<MyReservations />} />
-
-            
+            <Route path='/reservations' element={<MyReservations />} />            
             <Route path='/reserve' element={<AddReservation/>} />
             <Route path='/deleteVehicle' element={<DeleteVehicle/>} />
-
           </Routes>
         </SideMenu>
       ) :
         (
           <Routes>
             <Route path='/reservations' element={<MyReservations />} />
-            <Route path='/' element={<Main />} />
             <Route path='/signup' element={<Signup />} />
-            <Route path='/signin' element={<Signin />} />
-            <Route path='/' element={<Main />} />
+            <Route path='/' element={<Signin />} />
           </Routes>
         )}
     </div>
