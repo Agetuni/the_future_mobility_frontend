@@ -9,7 +9,7 @@ const initialState = {
     error: '',
 };
 
-export const delres = createAsyncThunk('reservation/deletereservation', (reservation) =>
+export const delres = createAsyncThunk('vehical/deletevehical', (reservation) =>
   axios.delete(`${BASE_URL}api/v1/users/${JSON.parse(localStorage.getItem('user')).id}/reservations,${reservation.id}`,
     {
         headers: {
@@ -22,19 +22,19 @@ const reservationSlice = createSlice({
     name: 'userDelres',
     initialState,
     extraReducers:(builder) => {
-        builder.addCase(deletereservation.pending, (state) => {
+        builder.addCase(delres.pending, (state) => {
           state.loading = true;
           state.reservation = {};
           state.error = '';
         });
-        builder.addCase(deletereservation.fulfilled, (state, action) => {
+        builder.addCase(delres.fulfilled, (state, action) => {
           state.loading = false;
-          state.reservation = action.payload;
+          state.vehical = action.payload;
           state.error = '';
         });
-        builder.addCase(deletereservation.rejected, (state, action) => {
+        builder.addCase(delres.rejected, (state, action) => {
           state.loading = false;
-          state.reservation = {};
+          state.vehical = {};
           state.error = action.error.message;
         });
       },
