@@ -16,6 +16,8 @@ const MyReservations = () => {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
   const [myreservations, setMyReservations] = useState([]);
+  
+
   useEffect(() => {
     const fetchData = async () => {
 
@@ -31,15 +33,17 @@ const MyReservations = () => {
       console.log(response.data);
       setMyReservations(response.data);
     };
+   
     fetchData();
 
-  },[]);
+  },[loading]);
 
  
   const delHandler = (value) => {
     
     dispatch(delereser({ id: value }))
-    navigate('/reservations')
+  
+    setLoading(true)
     
     console.log("asdasd")
   };
