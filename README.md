@@ -28,8 +28,6 @@
 
 # 📖 The Future Mobility Frontend. <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
-
 **The Future Mobility Frontend.** is react appp to manage CRUD operations in an electric cars users website. Complete Authorization, and authentication of users. CRUD operations on vehicles and Reservations.
 
 ## 🛠 Built With <a name="built-with"></a>
@@ -48,7 +46,7 @@
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
+    <li><a href="https://rubyonrails.org/">ruby on rails</a></li>
   </ul>
 </details>
 
@@ -65,9 +63,9 @@
 
 > Describe between 1-3 key features of the application.
 
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
+- **Watch Vehicles Offered**
+- **Check Vehicles Detail information **
+- **Add reservation for vehicle**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -77,7 +75,7 @@
 
 > Add a link to your deployed project.
 
-- [Live Demo Link](https://yourdeployedapplicationlink.com)
+- [APILink(https://future-mobility-backend.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
