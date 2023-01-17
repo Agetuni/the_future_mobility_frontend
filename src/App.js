@@ -19,7 +19,7 @@ const App = () => {
       {user ? (
         <SideMenu>
           <Routes>
-            <Route path='/' element={<VehicalList />} forceRefresh={true} />
+            <Route path='/' element={<VehicalList />}  />
             <Route path='/AddVehicle' element={<AddVehicle />} />
             <Route path="/vehicals/:id" element={<VehicalDetails />} />
             <Route path='/reservations' element={<MyReservations />} />            
