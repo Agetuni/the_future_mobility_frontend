@@ -8,8 +8,6 @@ import delvehicalSlice from "../../redux/vehical/delvehicalSlice";
 import { BrowserRouter } from "react-router-dom";
 import axios from 'axios';
 
-// const preloadedState = { reservation: { id: 1, date: 'any', address: 'any', user_id: 1, vehicle_id: 1 } };
-
 const store = configureStore({
     reducer: {
         addvehical:newvehical,
