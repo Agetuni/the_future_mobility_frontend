@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { nanoid } from '@reduxjs/toolkit';
 import axios from 'axios';
-import delres from '../../redux/reservations/delresSlice'
+import delereser from '../../redux/reservations/delreservation'
 import { updatevehical } from '../../redux/vehical/updatevehicalSlice';
 import BASE_URL from '../../api';
 import '../assets/styles/reservation.scss';
@@ -37,8 +37,8 @@ const MyReservations = () => {
 
 
   const delHandler = (value) => {
-    const state = { id: value };
-    dispatch(delres(state))
+    
+    dispatch(delereser({ id: value }))
 
     console.log("llllll")
   };
