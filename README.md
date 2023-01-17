@@ -60,7 +60,7 @@ After you're finished please remove all the comments and instructions!
 
 **[The Future Mobility Frontend]** is react appp to manage CRUD operations in an electric cars users website. Complete Authorization, and authentication of users. CRUD operations on vehicles and Reservations.
 
-<a href="https://github.com/ErikStoupignan/hello-rails-back-end">Click here to see the BACK-END project</a>
+<a href="https://github.com/Agetuni/the_future_mobility_backend">Click here to see the BACK-END project</a>
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -92,8 +92,6 @@ After you're finished please remove all the comments and instructions!
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
-
-> Describe between 1-3 key features of the application.
 
 - **Watch Vehicles Offered**
 - **Check Vehicles Detail information**
@@ -156,14 +154,31 @@ To run the project, execute the following command:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Erik Stoupignan Sánchez Beltrán**
+## 👤 Aleazar Yilma
 
-- GitHub: [@ErikStoupignan](https://github.com/ErikStoupignan)
-- Twitter: [@Erik_Stoupignan](https://twitter.com/Erik_Stoupignan)
-- LinkedIn: [Erik Stoupignan Sánchez Beltrán](https://www.linkedin.com/in/erik-sanchez-beltran/)
+- GitHub: [@Agetuni](https://github.com/Agetuni)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/aleazaryilma/)
+- AngelList: [timo-wester](https://angel.co/u/aleazar-yilma-1)
+
+## 👤 Carlos Molina
+- GitHub: [Carlos Molina](https://github.com/cmolinan)
+- LinkedIn: [Carlos Molina](https://www.linkedin.com/in/carlosmolinan)
+
+
+## 👤 Neeraj Bhardwaj
+
+- GitHub: [@Neeraj-Bhardwaj](https://github.com/rebel216)
+- Twitter: [@Neeraj-Bhardwaj](https://twitter.com/rebel216)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/neerajbhardwaj216/)
+
+
+## 👤 Wander Gonzalez
+
+- GitHub: [@wandergithub](https://github.com/wandergithub)
+- Twitter: [@wanderklk1](https://twitter.com/wanderklk1)
+- LinkedIn: [Wander A. Gonzalez](https://www.linkedin.com/in/wander-a-gonzalez-53127b205/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-<!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
 
