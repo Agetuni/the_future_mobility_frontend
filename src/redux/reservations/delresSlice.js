@@ -1,48 +1,44 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
-import BASE_URL from '../../api';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
+import BASE_URL from "../../api";
+
 
 const initialState = {
-  loading: false,
-  myreservation: '',
-  error: '',
+    loading: false,
+    reservation: '',
+    error: '',
 };
 
-export const delres = createAsyncThunk('reservation/delres', (myreservation) => axios
-  .delete(
- `${BASE_URL}api/v1/users/${userid}/reservations/${myreservation.id}`,
-
+export const delres = createAsyncThunk('reservation/deletereservation', (reservation) =>
+  axios.delete(`${BASE_URL}api/v1/users/${JSON.parse(localStorage.getItem('user')).id}/reservations,${reservation.id}`,
     {
-      headers: {
-        Authorization: `${JSON.parse(localStorage.getItem('user')).token}`,
+        headers: {
+            Authorization:`${JSON.parse(localStorage.getItem('user')).token}`,
+        },
+    }
+    ).then((response) => response.data));
+
+const reservationSlice = createSlice({
+    name: 'userDelres',
+    initialState,
+    extraReducers:(builder) => {
+        builder.addCase(deletereservation.pending, (state) => {
+          state.loading = true;
+          state.reservation = {};
+          state.error = '';
+        });
+        builder.addCase(deletereservation.fulfilled, (state, action) => {
+          state.loading = false;
+          state.reservation = action.payload;
+          state.error = '';
+        });
+        builder.addCase(deletereservation.rejected, (state, action) => {
+          state.loading = false;
+          state.reservation = {};
+          state.error = action.error.message;
+        });
       },
-      
-    },
-  )
-  .then((response) => response.data));
+      /* eslint-enable */
+    });
 
-const myreservationSlice = createSlice({
-  name: 'userDelRes',
-  initialState,
-  /* eslint-disable */
-  extraReducers: (builder) => {
-    builder.addCase(delres.pending, (state) => {
-      state.loading = true;
-      state.myreservation = {};
-      state.error = '';
-    });
-    builder.addCase(delres.fulfilled, (state, action) => {
-      state.loading = false;
-      state.myreservation = action.payload;
-      state.error = '';
-    });
-    builder.addCase(delres.rejected, (state, action) => {
-      state.loading = false;
-      state.myreservation = {};
-      state.error = action.error.message;
-    });
-  },
-  /* eslint-enable */
-});
-
-export default myreservationSlice.reducer;
+export default reservationSlice.reducer;

@@ -49,7 +49,7 @@ const AddReservation = () => {
 
   return (
     <div className="container ">
-      <div>{message} </div>
+      {message}
       <span className='add-vehicle-header'> Add Reservation</span>
       <div className="row">
         <form className='add-vehicle-form' onSubmit={submitHandler}>
