@@ -19,7 +19,7 @@ const AddReservation = () => {
 
   const updateHandler = (value) => {
     
-    const state = { id: value, reserved: true };
+    const state = { id: value };
     // dispatch(updatevehical(state));
   };
 
@@ -31,7 +31,7 @@ const AddReservation = () => {
           date: tdate, 
           address,
           user_id: userId,
-          vehical_id: 3,        
+          vehicle_id: params.id,        
                
           
         };
