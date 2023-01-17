@@ -202,9 +202,8 @@ If you like this project...
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
-
-I would like to thank...
+- This webpage is based on an originalas  [design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign) provided by [Murat Korkmaz](https://www.behance.net/muratk) on Behance.
+  https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
