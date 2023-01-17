@@ -17,7 +17,8 @@ const VehicalCard = ({ vehical }) => {
       </Link>
       <div className='vehice-detail'>
         <p>{vehical.name}</p>
-        <p className='vehice-detail-paragraph'>The Vespa c20 is stunnning moped with a modern electoronic system and more</p>
+        <p className='vehice-detail-paragraph'>In order to seee detail please click on the image.</p>
+        <p className='vehice-detail-paragraph'><b>Name:</b>{vehical.name}<b>Seat:</b>{vehical.seat}</p>
       </div>
     </div>
   );

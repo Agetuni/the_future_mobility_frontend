@@ -41,14 +41,14 @@ const DeleteVehicle = () => {
                                        
                                     <button
                             type="button"
-                            className="dangerbtn"
+                            className="btn btn-danger"
                             value={Vehical.id}
                             onClick={(e) => {
                               delHandler(e.target.value);
                               
                             }}
                           >
-                            DeleteVehicle
+                            Delete {Vehical.name}
                           </button>
                                     </div>
                             </div>

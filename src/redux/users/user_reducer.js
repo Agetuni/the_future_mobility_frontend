@@ -1,5 +1,5 @@
 // import { setLoading } from '../loading/load_reducer';
-
+import BASE_URL from "../../api";
 const LOG_IN = 'LOG_IN';
 const LOG_OUT = 'LOG_OUT';
 
