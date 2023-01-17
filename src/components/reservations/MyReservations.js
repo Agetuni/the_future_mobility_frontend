@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { nanoid } from '@reduxjs/toolkit';
@@ -36,8 +37,10 @@ const MyReservations = () => {
 
 
   const delHandler = (value) => {
-    
-    dispatch(delres({value }));
+    const state = { id: value };
+    dispatch(delres(state))
+
+    console.log("llllll")
   };
 
   // const cancelHandler = (value) => {

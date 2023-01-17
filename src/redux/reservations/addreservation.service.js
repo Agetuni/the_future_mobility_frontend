@@ -8,7 +8,7 @@ const addreservation = createAsyncThunk(
   
   'reservation/addreservation',
   (reservation) => {
-
+    console.log(reservation)
     axios.post(`${BASE_URL}api/v1/${JSON.parse(localStorage.getItem('user')).id}/reservation`, reservation, {
 
       headers: {

@@ -20,18 +20,15 @@ const AddReservation = () => {
   const updateHandler = (value) => {
     
     const state = { id: value, reserved: true };
-    dispatch(updatevehical(state));
+    // dispatch(updatevehical(state));
   };
 
 
-  const submitHandler = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if (result > 0) {
-      if (tdate === '' || city === '') {
-        setMessage('Please fill all the fields');
-      } else {
+    console.log("clicked")
         const reserve = {
-          vehical_id: params.id,
+          vehical_id: 3,
           user_id: userId,
           date: tdate,      
           address,
@@ -41,10 +38,8 @@ const AddReservation = () => {
         setMessage('Vehical reserved successfully');
         navigate('/reservations');
       }
-    } else {
-      setMessage('End date must be greater than start date');
-    }
-  };
+    
+  ;
 
 
   return (
@@ -52,7 +47,7 @@ const AddReservation = () => {
       {message}
       <span className='add-vehicle-header'> Add Reservation</span>
       <div className="row">
-        <form className='add-vehicle-form' onSubmit={submitHandler}>
+        <form className='add-vehicle-form'  onSubmit={(e) => handleSubmit(e)}>
           <div className="form-group">
             <label>email</label>
             <input placeholder={JSON.parse(localStorage.getItem('user')).email} type="text" className="form-control" id="formGroupExampleInput" disabled />
@@ -84,19 +79,11 @@ const AddReservation = () => {
               <option> car 5</option>
             </select>
           </div>
-          {reserved ?
-            (
-              <div className='button-green'>
-            <button type="button" className="btn btn-primary btn-lg btn-block detail-reserve-btn" disabled>Reserve</button>
+          <div className='button-green'>
+            <button type="submit" className="btn btn-primary btn-lg btn-block detail-reserve-btn">Reserve</button>
 
           </div>
-            ) : (
-              <div className='button-green'>
-            <button type="button" className="btn btn-primary btn-lg btn-block detail-reserve-btn" value={params.id}
-              onClick={(e) => updateHandler(e.target.value)}>Reserve</button>
-
-          </div>
-          )}
+          
           
         </form>
 

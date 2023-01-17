@@ -1,7 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
 import delresSlice from './reservations/delresSlice';
 import vehicalSlice from './vehical/vehicalSlice';
-import myreservationSlice from './reservations/reservationSlice';
+import delresReducer from './reservations/delresSlice';
+import reservationSlice from './reservations/reservationSlice';
 import newvehical from './vehical/newVehical';
 import delvehicalSlice from './vehical/delvehicalSlice';
 
@@ -11,6 +12,8 @@ const store = configureStore({
         vehical: vehicalSlice,
         delvehical: delvehicalSlice,
         delereser: delresSlice,
+        reservation: reservationSlice,
+        myreservation: delresReducer,
         
         
     },

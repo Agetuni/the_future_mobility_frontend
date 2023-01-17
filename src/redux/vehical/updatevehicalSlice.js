@@ -13,7 +13,7 @@ export const updatevehical = createAsyncThunk(
   'vehical/updatevehical',
     async (resource) => {
         console.log(resource)
-    const response = await axios.patch(`${BASE_URL}api/v1/vehicles/${resource.id}`, resource, {
+    const response = await axios.post(`${BASE_URL}api/v1/vehicles/${resource.id}`, resource, {
         headers: {
           Authorization: `${JSON.parse(localStorage.getItem('user')).token}`,
         },
