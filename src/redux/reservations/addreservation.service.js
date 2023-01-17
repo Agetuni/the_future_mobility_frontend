@@ -9,7 +9,7 @@ const addreservation = createAsyncThunk(
   'reservation/addreservation',
   (reservation) => {
     console.log(reservation)
-    axios.post(`${BASE_URL}api/v1/${JSON.parse(localStorage.getItem('user')).id}/reservation`, reservation, {
+    axios.post(`${BASE_URL}api/v1/users/${JSON.parse(localStorage.getItem('user')).id}/reservations`, reservation, {
 
       headers: {
         Authorization: `${JSON.parse(localStorage.getItem('user')).token}`,

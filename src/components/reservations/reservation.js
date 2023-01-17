@@ -27,11 +27,13 @@ const AddReservation = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("clicked")
-        const reserve = {
-          vehical_id: 3,
-          user_id: userId,
-          date: tdate,      
+    const reserve = {
+          date: tdate, 
           address,
+          user_id: userId,
+          vehical_id: 3,        
+               
+          
         };
         dispatch(addreservation(reserve));
         setReserved(true);
