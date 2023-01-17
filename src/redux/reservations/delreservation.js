@@ -22,7 +22,7 @@ export const delereser = createAsyncThunk(
     })
       .then((response) => {
 
-        useNavigate('/myReservations');
+       
 
         const { data } = response;
         return data;

@@ -26,12 +26,12 @@ const AddReservation = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("clicked")
+    console.log(params.id)
     const reserve = {
           date: tdate, 
           address,
           user_id: userId,
-          vehicle_id: params.id,        
+          vehicle_id: 3,        
                
           
         };

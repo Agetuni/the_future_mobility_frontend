@@ -8,14 +8,19 @@ import delereser from '../../redux/reservations/delreservation'
 import { updatevehical } from '../../redux/vehical/updatevehicalSlice';
 import BASE_URL from '../../api';
 import '../assets/styles/reservation.scss';
+
+
 const MyReservations = () => {
+  const params = useParams();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
   const [myreservations, setMyReservations] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
 
       const response = await axios.get(
-        `${BASE_URL}/api/v1/users/2/reservations`,
+        `${BASE_URL}/api/v1/users/${JSON.parse(localStorage.getItem('user')).id}/reservations`,
         {
           headers: {
             Authorization: `${JSON.parse(localStorage.getItem('user')).token}`,
@@ -28,19 +33,15 @@ const MyReservations = () => {
     };
     fetchData();
 
-  }, []);
+  },[]);
 
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-
-
-
-
+ 
   const delHandler = (value) => {
     
     dispatch(delereser({ id: value }))
-
-    console.log("llllll")
+    navigate('/reservations')
+    
+    console.log("asdasd")
   };
 
   // const cancelHandler = (value) => {
