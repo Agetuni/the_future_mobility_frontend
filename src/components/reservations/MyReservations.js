@@ -6,10 +6,7 @@ import axios from 'axios';
 import delres from '../../redux/reservations/delresSlice'
 import BASE_URL from '../../api';
 import '../assets/styles/reservation.scss';
-
-
 const MyReservations = () => {
-
   const [loading, setLoading] = useState(true);
   const [myreservations, setMyReservations] = useState([]);
   useEffect(() => {
@@ -22,8 +19,6 @@ const MyReservations = () => {
             Authorization: `${JSON.parse(localStorage.getItem('user')).token}`,
           },
         }
-
-
       );
       setLoading(false);
       console.log(response.data);
@@ -51,19 +46,39 @@ const MyReservations = () => {
   return (
 
     <>
-      <div>
-   {  myreservations.map((reservation)=>{
+    <div className="container reservation-container">
+        <span className='myreservatin-header'> My Reservation</span>
+        <table className="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Reservation Number</th>
+              <th scope="col">address</th>
+              <th scope="col">Reservation Date</th>
+              <th scope="col">vehicle</th>
+
+            </tr>
+          </thead>
+          <tbody>
+           
+            {  myreservations.map((reservation)=>{
       return(
-      <>
-        <p>{ reservation.id}</p>
-          <p>{reservation.date}</p>
-          <p>{reservation.address}</p>
-          <p>{reservation.user_id}</p>
-          <p>{reservation.vehicle_id}</p>
-      </>
+        <tr key={nanoid()}>
+        <th scope="row">{ reservation.id}</th>
+        <td>#RES123</td>
+        <td>{reservation.address}</td>
+        <td>{reservation.reserve_date}</td>
+        <td></td>
+      </tr>
         )
     })}
-        </div>
+
+
+
+
+          </tbody>
+        </table>
+      </div>
     </>
   );
 };
