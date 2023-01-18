@@ -1,9 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { AddVehicleSlice } from '../../redux/vehical/vehical_reducer';
+import { AddVehicleSlice, getVehicals } from '../../redux/vehical_reducer';
 import '../assets/styles/vehicle.scss';
-import newvehical from '../../redux/vehical/vehical.service'
 
 const AddVehicle = () => {
   const dispatch = useDispatch();
@@ -26,7 +25,8 @@ const AddVehicle = () => {
   const navigate = useNavigate();
   const submitValue = (formData) => {
     dispatch(AddVehicleSlice(formData));
-    navigate('/')
+    dispatch(getVehicals);
+    navigate('/');
   };
   const validateFields = (form) => {
     if (vehical.name !== '' && vehical.image !== '' && vehical.enginepower !== '' && vehical.enginetourque !== '' && vehical.transmission !== '' && vehical.fuel_capacity !== '' && vehical.seat !== '') {

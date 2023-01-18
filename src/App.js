@@ -21,9 +21,9 @@ const App = () => {
           <Routes>
             <Route path='/' element={<VehicalList />} forceRefresh={true} />
             <Route path='/AddVehicle' element={<AddVehicle />} />
-            <Route path="/vehicals/:id" element={<VehicalDetails />} />
+            <Route path='/vehicals/:id' element={<VehicalDetails />} />
             <Route path='/reservations' element={<MyReservations />} />            
-            <Route path='/reserve' element={<AddReservation/>} />
+            <Route path='/reserve/:id' element={<AddReservation/>} />
             <Route path='/deleteVehicle' element={<DeleteVehicle/>} />
           </Routes>
         </SideMenu>

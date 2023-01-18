@@ -2,7 +2,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { login } from '../../redux/users/user_reducer';
+import { login } from '../../redux/user_reducer';
 import Vespalogo from '../layouts/logo';
 const Signin= () => {
 	const [formData, setFormData] = React.useState({
