@@ -8,13 +8,13 @@ import '../assets/styles/swiper.scss';
 import 'swiper/css/bundle';
 import { Pagination, Navigation } from 'swiper';
 import VehicalCard from "./vehical";
+import { useSelector,useDispatch } from "react-redux";
+import { getVehicals } from "../../redux/vehical_reducer";
 const VehicalList = () => {
-  const [Vehicals, setVehicals] = useState([]);
-    const fetchData = async () => {
-      const response = await axios.get(`${BASE_URL}api/v1/vehicles/`);
-      setVehicals(response.data);
-    };
-    fetchData();
+  const Vehicals = useSelector((state) => state.vehical);
+  const dispatch = useDispatch();
+  useEffect(() => { dispatch(getVehicals()); 
+  }, []);
 
   return (
     <>
@@ -35,15 +35,16 @@ const VehicalList = () => {
           modules={[Pagination, Navigation]}
           className="swipper">
           <div className="sliders">
-            {Vehicals.length
-              ? Vehicals.map((Vehical) => (
+            {Vehicals? Vehicals.length ?
+               Vehicals.map((Vehical) => (
                 <SwiperSlide key={nanoid()}>
                   <div className="sliderCard ">
                     <VehicalCard key={nanoid()} vehical={Vehical} />
                   </div>
                 </SwiperSlide>
               ))
-              : null}
+              : null
+            :null}
           </div>
         </Swiper>
       </div>

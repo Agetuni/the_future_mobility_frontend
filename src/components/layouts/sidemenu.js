@@ -6,7 +6,7 @@ import Vespalogo from './logo';
 import { useDispatch, useSelector } from 'react-redux';
 import { BsFillArrowLeftSquareFill } from 'react-icons/bs';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { logout } from '../../redux/users/user_reducer';
+import { logout } from '../../redux/user_reducer';
 const SideMenu = ({ children }) => {
     const user = useSelector((state) => state.user);
     const navigate = useNavigate();

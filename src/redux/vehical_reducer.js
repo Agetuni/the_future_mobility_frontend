@@ -1,5 +1,6 @@
 /* eslint-disable */
 import axios from "axios";
+import BASE_URL from "../api"; 
 const ADD_VEHICAL = 'ADD_VEHICAL';
 const REMOVE_VEHICAL = 'REMOVE_VEHICAL';
 const GET_VEHICALS = 'GET_VEHICALS';
@@ -33,7 +34,7 @@ export const AddVehicleSlice = (request) => {
     });
     await new Promise((resolve) => setTimeout(resolve, 1000));    
     const response = await axios.post('http://localhost:3001/api/v1/vehicles', request,{ headers });
-    console.log(response);
+  
     const data = await response;
     dispatch({ type: ADD_VEHICAL, payload: data });
     dispatch({
@@ -42,7 +43,7 @@ export const AddVehicleSlice = (request) => {
   };
 }
 
-export const removeProduct = (id) => {
+export const removeVehical = (id) => {
   return async (dispatch) => {
     dispatch({
       type: 'SET_LOADING',
@@ -50,13 +51,14 @@ export const removeProduct = (id) => {
     // wait for 1000ms to simulate a loading time
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    const response = await fetch(`http://localhost:3000/products/${id}`, {
+    const response = await fetch(`${BASE_URL}api/v1/vehicles/${id}`, {
       method: 'DELETE',
       headers: {
         Authorization: JSON.parse(localStorage.getItem('user')).token,
       },
     });
     if (response.ok) {
+      dispat
       dispatch({ type: REMOVE_VEHICAL, payload: id });
     } else {
       console.log('something went wrong');
@@ -67,7 +69,8 @@ export const removeProduct = (id) => {
   };
 }
 
-export const getProducts = () => {
+export const getVehicals = () => {
+  console.log('get vehical');
   return async (dispatch) => {
     dispatch({
       type: 'SET_LOADING',
@@ -75,12 +78,14 @@ export const getProducts = () => {
     // wait for 1000ms to simulate a loading time
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    const response = await fetch('http://localhost:3000/products', {
+    const response = await fetch( `${BASE_URL}api/v1/vehicles/` , {
       headers: {
         Authorization: JSON.parse(localStorage.getItem('user')).token,
       },
     });
     const data = await response.json();
+    console.log('get vehical response');
+    console.log(data);
     if (data) {
       dispatch({ type: GET_VEHICALS, payload: data });
     } else {

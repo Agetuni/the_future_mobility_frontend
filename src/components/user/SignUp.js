@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import '../assets/styles/user.scss';
-import { login } from '../../redux/users/user_reducer';
+import { login } from '../../redux/user_reducer';
 import Vespalogo from '../layouts/logo';
 const Signup = () => {
   const [formData, setFormData] = React.useState({

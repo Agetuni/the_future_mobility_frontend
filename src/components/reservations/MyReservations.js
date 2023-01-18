@@ -1,52 +1,31 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+
 import { nanoid } from '@reduxjs/toolkit';
-import axios from 'axios';
-import delres from '../../redux/reservations/delresSlice'
-import BASE_URL from '../../api';
 import '../assets/styles/reservation.scss';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { getreservations } from '../../redux/resevation_reducer';
+import { cancelTestDrive } from '../../redux/resevation_reducer';
 const MyReservations = () => {
-  const [loading, setLoading] = useState(true);
-  const [myreservations, setMyReservations] = useState([]);
+
+
+  const myreservations = useSelector((state) => state.reservation);
+  const dispatch = useDispatch();
+  const deleteHandler = (value) => {
+    console.log(value);
+    dispatch(cancelTestDrive(value));
+  };
   useEffect(() => {
-    const fetchData = async () => {
-
-      const response = await axios.get(
-        `${BASE_URL}/api/v1/users/${JSON.parse(localStorage.getItem('user')).id}/reservations`,
-        {
-          headers: {
-            Authorization: `${JSON.parse(localStorage.getItem('user')).token}`,
-          },
-        }
-      );
-      setLoading(false);
-      console.log(response.data);
-      setMyReservations(response.data);
-    };
-    fetchData();
-
+    dispatch(getreservations());
+    console.log('ue effe ')
   }, []);
 
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  console.log(myreservations)
 
-
-
-
-  const delHandler = (value) => {
-    dispatch(delres({ id: value }));
-  };
-
-  const cancelHandler = (value) => {
-    const state = { id: value, reserved: false };
-
-    navigate('/vehicals');
-  };
   return (
 
     <>
-    <div className="container reservation-container">
+      <div className="container reservation-container">
         <span className='myreservatin-header'> My Reservation</span>
         <table className="table table-striped">
           <thead>
@@ -56,22 +35,27 @@ const MyReservations = () => {
               <th scope="col">address</th>
               <th scope="col">Reservation Date</th>
               <th scope="col">vehicle</th>
+              <th scope="col">Action</th>
+              <th></th>
 
             </tr>
           </thead>
           <tbody>
-           
-            {  myreservations.map((reservation)=>{
-      return(
-        <tr key={nanoid()}>
-        <th scope="row">{ reservation.id}</th>
-        <td>#RES123</td>
-        <td>{reservation.address}</td>
-        <td>{reservation.reserve_date}</td>
-        <td></td>
-      </tr>
-        )
-    })}
+            {myreservations?.map((reservation) => {
+              return (
+                <tr key={nanoid()}>
+                  <th scope="row">{reservation.id}</th>
+                  <td>#RES123</td>
+                  <td>{reservation.address}</td>
+                  <td>{new Date(reservation.reserve_date).toDateString()}</td>
+                  <td></td>
+                  <td className='action-button-container'>
+                    <button className='btn btn-danger' onClick={() => deleteHandler(reservation.id)}> Cancel </button>
+                  </td>
+
+                </tr>
+              )
+            })}
 
 
 

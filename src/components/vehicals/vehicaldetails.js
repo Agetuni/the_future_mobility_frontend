@@ -63,7 +63,7 @@ const VehicalDetails = () => {
             </div>
 
             <div className='button-green'>
-              <Link to='/reserve' type="button" className="btn btn-primary btn-lg btn-block detail-reserve-btn">Reserve</Link>
+              <Link to={`/reserve/${vehical.id}`} type="button" className="btn btn-primary btn-lg btn-block detail-reserve-btn">Reserve</Link>
 
             </div>
           </div>
