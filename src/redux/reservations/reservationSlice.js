@@ -34,4 +34,4 @@ const reservationSlice = createSlice({
   },
 });
 
-export default reservationSlice.reducer;
+export default reservationSlice;
