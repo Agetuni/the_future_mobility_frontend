@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reservation form match snapshot 1`] = `
+<div
+  className="container "
+>
+  <span
+    className="add-vehicle-header"
+  >
+     Reserve
+  </span>
+  <div
+    className="row"
+  >
+    <form
+      className="add-vehicle-form"
+    >
+      <div
+        className="form-group"
+      >
+        <label>
+          email
+        </label>
+        <input
+          className="form-control"
+          disabled={true}
+          id="formGroupExampleInput"
+          type="text"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <label>
+          Date
+        </label>
+        <input
+          className="form-control"
+          id="formGroupExampleInput2"
+          required={true}
+          type="date"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <label>
+          Address
+        </label>
+        <input
+          className="form-control"
+          id="formGroupExampleInput2"
+          required={true}
+          type="text"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <label>
+          Vehicle
+        </label>
+        <select
+          className="form-control"
+          id="exampleFormControlSelect1"
+        >
+          <option>
+             car 1
+          </option>
+          <option>
+             car 2
+          </option>
+          <option>
+             car 3
+          </option>
+          <option>
+             car 4
+          </option>
+          <option>
+             car 5
+          </option>
+        </select>
+      </div>
+      <div
+        className="button-green"
+      >
+        <button
+          className="btn btn-primary btn-lg btn-block detail-reserve-btn"
+          type="button"
+        >
+          Reserve
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
