@@ -36,8 +36,6 @@ const AddVehicle = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('this is sth')
-    console.log(vehical);
     if (validateFields(e.target)) {
       var requestData ={
         vehicle :{
@@ -50,7 +48,6 @@ const AddVehicle = () => {
           seat:vehical.seat
         },
       };
-      console.log(requestData)
       submitValue(requestData);
     }
     else {

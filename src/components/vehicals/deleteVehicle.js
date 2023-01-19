@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { nanoid } from "nanoid";
 import { Dispatch } from "react";
 import { getVehicals, removeVehical } from "../../redux/vehical_reducer";
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 const DeleteVehicle = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -13,12 +15,28 @@ const DeleteVehicle = () => {
     useEffect(() => {
         dispatch(getVehicals());
     }, []);
-
-
-    const deleteHandler = (value) => {
+    const submitDelete = (value) => {
         dispatch(removeVehical(value));
         dispatch(getVehicals());
         navigate('/');
+    }
+
+    const deleteHandler = (value) => {
+        confirmAlert({
+            title: 'Are you sure to do this.',
+            message: 'All reservation registered will be deleted',
+            buttons: [
+                {
+                    label: 'Yes',
+                    className: 'btn btn-danger',
+                    onClick: () => submitDelete(value)
+                },
+                {
+                    label: 'No',
+                    onClick: () => { navigate('/deleteVehicle');}
+                }
+            ]
+        });
     };
 
     return (
@@ -29,9 +47,9 @@ const DeleteVehicle = () => {
 
                     {Vehicals ? Vehicals.length
                         ? Vehicals.map((Vehical) => (
-                            <div className="col-sm-4 vehicle-delete-card " key={nanoid()}>
+                            <div className="col-sm-4 " key={nanoid()}>
                                 <div className="card " >
-                                    <img src={Vehical.image} width="100%" height="100%" />
+                                    <img src={Vehical.image} width="100%" height="80%" />
                                     <div className="card-body">
 
                                         <button
@@ -40,7 +58,6 @@ const DeleteVehicle = () => {
                                             value={Vehical.id}
                                             onClick={(e) => {
                                                 deleteHandler(e.target.value);
-
                                             }}
                                         >
                                             Delete {Vehical.name}

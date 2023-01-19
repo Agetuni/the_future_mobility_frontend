@@ -43,12 +43,10 @@ export const reserve =
   };
 
 export const cancelTestDrive = (id) => async (dispatch) => {
-  debugger;
   fetch( `${BASE_URL}api/v1/users/${JSON.parse(localStorage.getItem("user")).id}/reservations/${id}`, {
     method: "DELETE",
     headers: {
       Authorization: JSON.parse(localStorage.getItem("user")).token,
-      "Content-Type": "application/json",
     },
   })
     .then((response) => response.json())
@@ -59,13 +57,14 @@ export const cancelTestDrive = (id) => async (dispatch) => {
       });
     })
     .catch((error) => {
-      console.log(error);
+      dispatch({
+        type: CANCEL_TEST_DRIVE,
+        payload: id,
+      });
     });
 };
 
 export const getreservations = () => {
-  console.log('token');
-  console.log(JSON.parse(localStorage.getItem("user")).token)
   return async (dispatch) => {
     const response = await fetch(`${BASE_URL}api/v1/users/${JSON.parse(localStorage.getItem("user")).id}/reservations`, {
       headers: {
@@ -74,7 +73,6 @@ export const getreservations = () => {
     });
    
     const data = await response.json();
-    console.log(data);
     if (!data) {
       dispatch({ type: GET_RESERVATIONS, payload: [] });
     } else {

@@ -2,6 +2,7 @@
 import BASE_URL from "../api";
 const LOG_IN = 'LOG_IN';
 const LOG_OUT = 'LOG_OUT';
+const SING_UP = 'SING_UP'
 
 const initialState = JSON.parse(localStorage.getItem('user')) || null;
 
@@ -9,13 +10,14 @@ const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOG_IN:
       return action.payload;
+    case SING_UP:
+      return action.payload;
     case LOG_OUT:
       return null;
     default:
       return state;
   }
 };
-
 export const login = (user) => async (dispatch) => {
   const userdata = {
     user: {
@@ -29,23 +31,22 @@ export const login = (user) => async (dispatch) => {
   // wait for 1000ms to simulate a loading time
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
-  const response = await fetch('http://localhost:3001/api/v1/users/login', {
+  const response = await fetch(`${BASE_URL}api/v1/users/login`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(userdata.user),
   });
-  console.log(response)
   const token = response.headers.get('Authorization');
 
   const data = await response.json();
-  
+
   if (response.status === 200) {
     const localdata = {
       name: data.name,
       token: data.token,
-      id:data.id
+      id: data.id
     };
     localStorage.setItem('user', JSON.stringify(localdata));
     localStorage.setItem('id', JSON.stringify(localdata.id));
@@ -54,7 +55,6 @@ export const login = (user) => async (dispatch) => {
       payload: data,
     });
   } else {
-    console.log(data);
   }
   dispatch({
     type: 'SET_LOADING',
@@ -68,7 +68,7 @@ export const logout = () => async (dispatch) => {
 
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
-  fetch('http://localhost:3001/logout', {
+  fetch(`${BASE_URL}api/v1/logout`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -77,7 +77,6 @@ export const logout = () => async (dispatch) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
     })
     .catch((error) => {
       console.error('Error:', error);

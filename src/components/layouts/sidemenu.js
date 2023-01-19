@@ -1,5 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 import PropTypes from 'prop-types';
+import {FaBars} from  "react-icons/fa"
 import React, { useState } from 'react';
 import '../assets/styles/sidemenu.scss';
 import Vespalogo from './logo';
@@ -15,7 +16,7 @@ const SideMenu = ({ children }) => {
         <div className="s-layout">
             <div className="s-layout__sidebar">
                 <a className="s-sidebar__trigger" href="#0">
-                    <i className="cc"></i>
+                <i className="cc"><FaBars/></i>
                 </a>
                 
                 <nav className="s-sidebar__nav">
@@ -27,7 +28,7 @@ const SideMenu = ({ children }) => {
                         <li>
                             <NavLink
                                 to={'/'} className="s-sidebar__nav-link" href="#0">
-                                <i className="fa fa-home"></i><em>Vehicles</em>
+                                <i className="fa fa-home"></i><em> Vehicles</em>
                             </NavLink>
                         </li>
                         <li>

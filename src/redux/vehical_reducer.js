@@ -24,7 +24,6 @@ export const vehicalReducer = (state = initialState, action) => {
 }
 
 export const AddVehicleSlice = (request) => {
-  console.log(JSON.stringify(request))
   const headers = { 
     'Authorization': JSON.parse(localStorage.getItem('user')).token
 };
@@ -33,7 +32,7 @@ export const AddVehicleSlice = (request) => {
       type: 'SET_LOADING',
     });
     await new Promise((resolve) => setTimeout(resolve, 1000));    
-    const response = await axios.post('http://localhost:3001/api/v1/vehicles', request,{ headers });
+    const response = await axios.post(`${BASE_URL}api/v1/vehicles`, request,{ headers });
   
     const data = await response;
     dispatch({ type: ADD_VEHICAL, payload: data });
@@ -61,7 +60,6 @@ export const removeVehical = (id) => {
       dispat
       dispatch({ type: REMOVE_VEHICAL, payload: id });
     } else {
-      console.log('something went wrong');
     }
     dispatch({
       type: 'SET_LOADING',
@@ -70,7 +68,6 @@ export const removeVehical = (id) => {
 }
 
 export const getVehicals = () => {
-  console.log('get vehical');
   return async (dispatch) => {
     dispatch({
       type: 'SET_LOADING',
@@ -84,8 +81,6 @@ export const getVehicals = () => {
       },
     });
     const data = await response.json();
-    console.log('get vehical response');
-    console.log(data);
     if (data) {
       dispatch({ type: GET_VEHICALS, payload: data });
     } else {
