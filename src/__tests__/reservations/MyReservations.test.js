@@ -1,22 +1,22 @@
 import MyReservations from "../../components/reservations/MyReservations";
 import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import { configureStore } from '@reduxjs/toolkit';
-import vehicalSlice from '../../redux/vehical/vehicalSlice';
-import newvehical from '../../redux/vehical/vehical.service';
-import delvehicalSlice from "../../redux/vehical/delvehicalSlice";
 import { BrowserRouter } from "react-router-dom";
 import axios from 'axios';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import thunk from 'redux-thunk';
+import userReducer from '../../redux/user_reducer';
+import { vehicalReducer } from '../../redux/vehical_reducer';
+import { reserveReducer } from '../../redux/resevation_reducer';
 
-const store = configureStore({
-    reducer: {
-        addvehical:newvehical,
-        vehical: vehicalSlice,
-        delvehical:delvehicalSlice,
-        
-    }, // eslint-disable-line
-
+const rootReducer = combineReducers({
+  // Reducers
+  reservation: reserveReducer,
+  vehical: vehicalReducer,
+  user: userReducer
 });
+
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 
 describe('MyReservations', () => {

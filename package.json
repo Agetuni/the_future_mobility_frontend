@@ -29,6 +29,7 @@
     "react-spring": "^9.5.4",
     "redux": "^4.2.0",
     "redux-logger": "^3.0.6",
+    "redux-mock-store": "^1.5.4",
     "redux-thunk": "^2.4.1",
     "sass": "^1.54.9",
     "swiper": "^8.4.2",
