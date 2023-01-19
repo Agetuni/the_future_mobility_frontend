@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family:
+    source-code-pro,
+    Menlo,
+    Monaco,
+    Consolas,
+    "Courier New",
+    monospace;
+}
+
+.btn-primary {
+  background-color: #97bf0f !important;
+  border-color: #97bf0f !important;
+}
+
+.App {
+  background-color: white;
+  overflow-x: hidden !important;
+}
+
+.Auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.Auth-form {
+  width: 420px;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.add-product-form {
+  width: 50%;
+}
+
+.Auth-content {
+  padding-left: 12%;
+  padding-right: 12%;
+}
+
+.Auth-title {
+  text-align: center;
+  margin-bottom: 1em;
+  color: rgb(34, 34, 34);
+  font-weight: 600;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif !important;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(34, 34, 34);
+}
+
+.ml-2 {
+  margin-left: 0.5em;
+}
+
+.product_image {
+  width: 60vw;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .product_image {
+    width: 60vw;
+  }
+
+  .add-product-form {
+    width: 100%;
+  }
+
+  .details-page-container {
+    flex-direction: column;
+    width: 100%;
+  }
+}

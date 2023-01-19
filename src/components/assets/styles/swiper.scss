@@ -1,0 +1,78 @@
+.container-swipper {
+  height: 80vh;
+  width: 100%;
+  z-index: 0;
+}
+
+.swipper {
+  height: 100%;
+  width: 85vw;
+  z-index: 0;
+}
+
+.sliders {
+  height: 100%;
+  width: 100%;
+}
+
+.sliderCard {
+  width: 90%;
+  height: 90%;
+  margin: auto;
+  z-index: 0;
+}
+// .blue{
+//   background-color: blue;
+// }
+// .pink{
+//   background-color: pink;
+// }
+
+// .green{
+//   background-color: green;
+// }
+.vehicle-image-container {
+  border-radius: 60%;
+  width: 60vh;
+  background-color: #d3ece9;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vehicle-image {
+  width: 40vh;
+  height: 40vh;
+  border-radius: 50%;
+}
+
+.vehice-detail p {
+  margin-top: 2vh;
+  font-family: "Lato", sans-serif;
+  text-decoration: none !important;
+  color: black;
+  text-align: center;
+}
+
+.vehice-detail-paragraph {
+  color: grey !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .vehicle-image-container {
+    border-radius: 60%;
+    width: 40vh;
+    background-color: #d3ece9;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .vehicle-image {
+    width: 30vh;
+    height: 30vh;
+    border-radius: 50%;
+  }
+}

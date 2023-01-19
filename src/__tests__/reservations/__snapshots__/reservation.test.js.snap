@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reservation form match snapshot 1`] = `
+<div
+  className="container "
+>
+  <span
+    className="add-vehicle-header"
+  >
+     Reserve
+  </span>
+  <div
+    className="row"
+  >
+    <form
+      className="add-vehicle-form"
+      onSubmit={[Function]}
+    >
+      <div
+        className="form-group"
+      >
+        <label>
+          User name 
+        </label>
+        <input
+          className="form-control"
+          disabled={true}
+          id="formGroupExampleInput"
+          type="text"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <label>
+          Date
+        </label>
+        <input
+          className="form-control"
+          id="formGroupExampleInput2"
+          name="reserve_date"
+          onChange={[Function]}
+          required={true}
+          type="date"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <label>
+          Address
+        </label>
+        <input
+          className="form-control"
+          id="formGroupExampleInput2"
+          name="address"
+          onChange={[Function]}
+          required={true}
+          type="text"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <label>
+          Vehicle
+        </label>
+        <select
+          className="form-control"
+          id="exampleFormControlSelect1"
+          name="vehicle_id"
+          onChange={[Function]}
+        />
+      </div>
+      <div
+        className="button-green"
+      >
+        <button
+          className="btn btn-primary btn-lg btn-block detail-reserve-btn"
+          type="submit"
+        >
+          Reserve
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
