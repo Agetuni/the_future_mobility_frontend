@@ -1,7 +1,7 @@
 {
   "name": "the-future-mobility",
   "version": "0.1.0",
-  "homepage": ".",
+  "homepage": "https://agetuni.github.io/the_future_mobility_frontend/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
@@ -55,6 +55,8 @@
     "stylelint-scss": "^3.21.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom --coverage",
