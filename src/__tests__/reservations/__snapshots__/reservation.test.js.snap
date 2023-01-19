@@ -14,12 +14,13 @@ exports[`Reservation form match snapshot 1`] = `
   >
     <form
       className="add-vehicle-form"
+      onSubmit={[Function]}
     >
       <div
         className="form-group"
       >
         <label>
-          email
+          User name 
         </label>
         <input
           className="form-control"
@@ -37,6 +38,8 @@ exports[`Reservation form match snapshot 1`] = `
         <input
           className="form-control"
           id="formGroupExampleInput2"
+          name="reserve_date"
+          onChange={[Function]}
           required={true}
           type="date"
         />
@@ -50,6 +53,8 @@ exports[`Reservation form match snapshot 1`] = `
         <input
           className="form-control"
           id="formGroupExampleInput2"
+          name="address"
+          onChange={[Function]}
           required={true}
           type="text"
         />
@@ -63,30 +68,16 @@ exports[`Reservation form match snapshot 1`] = `
         <select
           className="form-control"
           id="exampleFormControlSelect1"
-        >
-          <option>
-             car 1
-          </option>
-          <option>
-             car 2
-          </option>
-          <option>
-             car 3
-          </option>
-          <option>
-             car 4
-          </option>
-          <option>
-             car 5
-          </option>
-        </select>
+          name="vehicle_id"
+          onChange={[Function]}
+        />
       </div>
       <div
         className="button-green"
       >
         <button
           className="btn btn-primary btn-lg btn-block detail-reserve-btn"
-          type="button"
+          type="submit"
         >
           Reserve
         </button>
