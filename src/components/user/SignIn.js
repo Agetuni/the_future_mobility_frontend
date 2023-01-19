@@ -24,7 +24,6 @@ const Signin= () => {
 
 	const vaidateData = () => {
 		if (formData.email === '' || formData.password === '') {
-			console.log('Please fill all the fields')
 			return false
 		}
 		return true

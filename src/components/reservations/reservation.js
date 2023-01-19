@@ -24,7 +24,6 @@ const AddReservation = () => {
       [e.target.name]: e.target.value,
     });
   };
-  console.log(reservation);
 
 
 

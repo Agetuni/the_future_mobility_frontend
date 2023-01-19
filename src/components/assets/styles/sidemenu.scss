@@ -51,10 +51,12 @@ a {
   height: 4em;
   background: #fff;
 }
-
+.s-layout__sidebar{
+  z-index: 1;
+}
 .s-sidebar__trigger > i {
   display: inline-block;
-  margin: 1.5em 0 0 1.5em;
+  margin: 0 0 0 0.5em;
   color: #f07ab0;
 }
 

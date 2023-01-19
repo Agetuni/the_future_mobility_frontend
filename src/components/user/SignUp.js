@@ -1,4 +1,5 @@
 /* eslint-disable */
+import BASE_URL from '../../api';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -27,19 +28,15 @@ const Signup = () => {
     } = formData;
 
     if (name === '') {
-      console.log('Name is required');
       return false;
     }
     if (email === '' || !email.includes('@') || !email.includes('.')) {
-      console.log('Email is required');
       return false;
     }
     if (password === '' || password.length < 6) {
-      console.log('Password is required and must be at least 6 characters');
       return false;
     }
     if (password_confirmation === '' || password_confirmation !== password) {
-      console.log('Password confirmation is required and must match password');
       return false;
     }
 
@@ -59,7 +56,7 @@ const Signup = () => {
       user,
     };
     
-    const response = await fetch('http://localhost:3001/api/v1/users/signup', {
+    const response = await fetch(`${BASE_URL}api/v1/users/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -68,14 +65,10 @@ const Signup = () => {
     });
 
     const data = await response.json();
-    console.log(response);
-    console.log(data);
     if (response.status === 200) {
-        console.log('user loged in');
       dispatch(login(user));
     } else {
-      console.log(data.errors);
-    }
+    }    
 		navigate('/')
   };
 

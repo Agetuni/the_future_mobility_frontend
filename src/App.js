@@ -13,7 +13,6 @@ import AddReservation from './components/reservations/reservation';
 import DeleteVehicle from './components/vehicals/deleteVehicle';
 const App = () => {
   const user = useSelector((state) => state.user);
-  console.log(user);
   return (
     <div className='APP'>
       {user ? (
