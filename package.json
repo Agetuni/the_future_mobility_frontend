@@ -1,7 +1,7 @@
 {
   "name": "the-future-mobility",
   "version": "0.1.0",
-  "homepage": "https://agetuni.github.io/the_future_mobility_frontend/",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
