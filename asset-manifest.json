@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "./static/css/main.52600f3a.css",
+    "main.js": "./static/js/main.50041b51.js",
+    "static/media/tesla.png": "./static/media/tesla.4e29f635e8d98fe3d009.png",
+    "index.html": "./index.html",
+    "main.52600f3a.css.map": "./static/css/main.52600f3a.css.map",
+    "main.50041b51.js.map": "./static/js/main.50041b51.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.52600f3a.css",
+    "static/js/main.50041b51.js"
+  ]
+}
