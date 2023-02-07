@@ -8,6 +8,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { BsFillArrowLeftSquareFill } from 'react-icons/bs';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { logout } from '../../redux/user_reducer';
+import { ReactComponent as FacebookIcon } from '../assets/images/facebook.svg';
+import { ReactComponent as GoogleIcon } from '../assets/images/google.svg';
+import { ReactComponent as PinterestIcon } from '../assets/images/pinterest.svg';
+import { ReactComponent as VimeoIcon } from '../assets/images/vimeo.svg';
+import { ReactComponent as TwitterIcon } from '../assets/images/twitter.svg';
+
 const SideMenu = ({ children }) => {
     const user = useSelector((state) => state.user);
     const navigate = useNavigate();
@@ -58,6 +64,16 @@ const SideMenu = ({ children }) => {
                         </li>
 
                     </ul>
+                    <div className="social-media">
+                        <div>
+                            <TwitterIcon />
+                            <FacebookIcon />
+                            <GoogleIcon />
+                            <VimeoIcon />
+                            <PinterestIcon />
+                        </div>
+                        <p>&copy; Copyrights. All rights reserved.</p>
+                    </div>
                 </nav>
             </div>
             <main className="s-layout__content">

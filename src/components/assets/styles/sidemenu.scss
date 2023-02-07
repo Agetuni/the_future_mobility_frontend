@@ -84,6 +84,19 @@ a {
   top: 5em;
 }
 
+.social-media {
+  position: absolute;
+  top: 88em;
+  left: 15px;
+  font-size: x-small;
+  font-weight: bolder;
+}
+.social-media > div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
 .s-sidebar__nav ul {
   position: absolute;
   top: 10em;
@@ -115,6 +128,7 @@ a {
 
 .s-sidebar__nav-link:hover {
   background: #97bf0f;
+  color: white;
 }
 
 .s-sidebar__nav-link > i {
