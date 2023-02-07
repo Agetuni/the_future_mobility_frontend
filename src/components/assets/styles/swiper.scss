@@ -20,6 +20,7 @@
   height: 90%;
   margin: auto;
   z-index: 0;
+  display: flex;
 }
 // .blue{
 //   background-color: blue;
@@ -34,7 +35,6 @@
 .vehicle-image-container {
   border-radius: 60%;
   width: 60vh;
-  background-color: #d3ece9;
   height: 60vh;
   display: flex;
   align-items: center;
@@ -63,7 +63,6 @@
   .vehicle-image-container {
     border-radius: 60%;
     width: 40vh;
-    background-color: #d3ece9;
     height: 40vh;
     display: flex;
     align-items: center;
