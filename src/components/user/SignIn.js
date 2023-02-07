@@ -70,6 +70,9 @@ const Signin= () => {
 					<p>
 						Don't have an account? <Link to="/signup">Sign Up</Link>
 					</p>
+					<p className="Auth-content">
+						<b>	Note:</b> This is a demo version and the database may be in sleep mode. <b> Please wait a few minutes</b> for it to respond on first use.	
+					</p>
 				</div>
 			</form>
 		</div>

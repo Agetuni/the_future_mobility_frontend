@@ -132,6 +132,9 @@ const Signup = () => {
             {' '}
             <Link to="/">Login</Link>
           </p>
+          <p className="Auth-content">
+						<b>	Note:</b> This is a test version and the database may be in sleep mode. <b> Please wait a few minutes</b> for it to respond on first use.	
+					</p>
         </div>
       </form>
     </div>
